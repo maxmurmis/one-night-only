@@ -107,7 +107,7 @@ comercial.** Está todo en `content.ts` → `tiers`, en texto plano.
 | **Postgres con SQL a mano (`postgres.js`), sin ORM** | 3 tablas. Un ORM acá es más superficie que ayuda. Las queries van parametrizadas por los tagged templates, así que inyección no hay. | Prisma / Drizzle. |
 | **El esquema se crea solo en el primer request** | Vos no tenés que correr ninguna migración: seteás `DATABASE_URL` y anda. Todo es `IF NOT EXISTS`, y si dos instancias arrancan en frío a la vez, la carrera se detecta y se ignora. | `drizzle-kit push` / alembic: un paso manual más, justo el que se olvida. |
 | **`prepare: false` en el cliente** | Obligatorio para el pooler en modo transacción de Supabase (pgbouncer) e inofensivo en Neon. Así la misma URL sirve para cualquiera de los dos. | Atarlo a un proveedor. |
-| **Modo prueba sin Google** (`ALLOW_DEV_LOGIN`) | Para que pudieras recorrer la app entera antes de crear las credenciales. Se apaga solo cuando `VERCEL_ENV=production`. | Que no puedas ver nada hasta terminar el trámite en la consola de Google. |
+| **Modo prueba sin Google** (`ALLOW_DEV_LOGIN`) | Para que pudieras recorrer la app entera antes de crear las credenciales. Sólo se enciende contra una base **local**: gatearlo por entorno no alcanzaba (ver abajo). | Que no puedas ver nada hasta terminar el trámite en la consola de Google. |
 | **Los perfiles de demo son clusters, no ruido** | Con respuestas al azar **todo el padrón daría ~47%** y parecería que el algoritmo no discrimina. Los 45 perfiles salen de 6 arquetipos con mutación variable. | `Math.random()` puro. |
 | **`is_demo` como columna** | `npm run seed -- --clean` borra los de demo sin tocar a nadie real. | Borrar por rango de fecha y rezar. |
 
@@ -128,6 +128,45 @@ Los dejo escritos porque los tres pasaban CI y `curl` sin chistar:
    habían elegido.** Coincidir en 1 de 3 títulos da similitud ~0,25 y caía del
    lado de los choques. Ahora compartir aunque sea un título ya cuenta como
    coincidencia.
+
+## Lo que encontró la revisión adversarial
+
+Después de tenerla andando le pasé una revisión por cuatro lentes (seguridad,
+correctitud, deploy y experiencia real de la noche del evento), con cada hallazgo
+verificado por un segundo revisor cuyo trabajo era refutarlo. Sobrevivieron
+—y están arreglados— estos:
+
+- **Fuga de contacto (la más seria).** `publicProfile()` mandaba el `@instagram`
+  de todo el mundo al cliente. En pantalla sólo se pintaba en los match mutuos,
+  pero el objeto entero viaja serializado en el HTML: con ver el código fuente
+  del ranking salían los Instagram de todo el padrón. Ahora el gate es del lado
+  del servidor (`revealContact`), verificado contra la tabla de likes.
+- **El modo prueba podía tomar cualquier cuenta.** `upsertUser` busca por email,
+  así que con el email de otra persona devolvía su fila y le firmaba una sesión
+  válida. Peor: la cookie es un HMAC sin host adentro, y un preview de Vercel
+  hereda por default la misma base y el mismo `AUTH_SECRET`. Ahora el modo
+  prueba exige base **local** y rechaza cualquier cuenta que ya se haya
+  autenticado con Google.
+- **Los textos del pochoclo salían al revés en un tercio de los pares.** El modo
+  complemento tiene tres desenlaces (se complementan / iguales / ninguno) y sólo
+  había dos textos: a dos personas que habían elegido las dos "dulce" les decía
+  *"uno dulce y el otro salado"*, con sus dos respuestas iguales impresas justo
+  abajo. Ahora hay un texto por desenlace, y `db:check` falla si falta alguno.
+- **Las respuestas de catálogo no se validaban contra el catálogo.** Un POST a
+  mano podía guardar cualquier string de 80 caracteres, y ese texto se
+  renderizaba como si fuera un título de película en la pantalla de la otra
+  persona.
+- **El chequeo de esquema miraba una sola tabla.** Si la creación fallaba después
+  de `users`, se tomaba por una carrera inofensiva: la instancia no reintentaba,
+  `/matches` tiraba 500 por `likes` inexistente y `/api/health` seguía diciendo
+  "ok". Ahora verifica las tres.
+- **`APP_URL` cargada en los tres entornos rompía el login en preview** de forma
+  determinística (el `redirect_uri` apuntaba a producción y la cookie de estado
+  quedaba en el host del preview). La app ignora `APP_URL` en previews.
+- Más: doble tap en una opción saltaba una pregunta entera; el spinner del
+  guardado final nunca aparecía (`useTransition` no espera una promesa); el
+  autoguardado no corría en 10 de las 14 preguntas; un `userId` mal formado daba
+  un 500 vacío; y el zoom estaba bloqueado.
 
 ## Límites conocidos
 

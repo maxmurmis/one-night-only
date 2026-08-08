@@ -31,7 +31,8 @@ export const viewport: Viewport = {
   themeColor: "#08050a",
   width: "device-width",
   initialScale: 1,
-  maximumScale: 1,
+  // Sin maximumScale: bloquear el pinch-zoom deja afuera a quien lo necesita
+  // para leer, y no arregla nada que el layout no resuelva ya.
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

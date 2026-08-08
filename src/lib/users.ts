@@ -2,6 +2,7 @@ import { db } from "./db";
 import type { DbUser } from "./auth";
 import { compare, isComplete, stamp } from "./scoring";
 import { QUESTIONS } from "./questions";
+import { catalogItem } from "./catalog";
 import type { Answers, MatchResult } from "./types";
 
 /** Techo de candidatos que se puntúan en memoria por request. */
@@ -20,7 +21,16 @@ export type PublicProfile = {
   isDemo: boolean;
 };
 
-export function publicProfile(u: DbUser): PublicProfile {
+/**
+ * Proyección de un perfil para mandar al cliente.
+ *
+ * `revealContact` tiene que quedar en false salvo que el match mutuo esté
+ * verificado EN EL SERVIDOR. Esconder el @instagram sólo en el render no
+ * alcanza: el objeto entero viaja serializado en el HTML de los componentes de
+ * cliente, así que cualquiera podía ver el código fuente del ranking y sacar el
+ * Instagram de todas las personas del padrón sin darle like a nadie.
+ */
+export function publicProfile(u: DbUser, revealContact = false): PublicProfile {
   return {
     id: u.id,
     code: u.code,
@@ -29,10 +39,21 @@ export function publicProfile(u: DbUser): PublicProfile {
     age: u.age,
     city: u.city,
     bio: u.bio,
-    instagram: u.instagram,
+    instagram: revealContact ? u.instagram : null,
     stamp: stamp((u.answers ?? {}) as Answers),
     isDemo: u.is_demo,
   };
+}
+
+/** ¿Se dieron like los dos? Es la condición para revelar el contacto. */
+export async function areMutual(aId: string, bId: string): Promise<boolean> {
+  const q = await db();
+  const rows = await q`
+    SELECT 1 FROM likes a
+    JOIN likes b ON b.from_user = a.to_user AND b.to_user = a.from_user
+    WHERE a.from_user = ${aId} AND a.to_user = ${bId}
+    LIMIT 1`;
+  return rows.length > 0;
 }
 
 export async function userByCode(code: string): Promise<DbUser | null> {
@@ -80,12 +101,16 @@ export async function rankedMatches(me: DbUser, limit = 40): Promise<RankedMatch
 
   const mine = (me.answers ?? {}) as Answers;
   return rows
-    .map((u) => ({
-      profile: publicProfile(u),
-      result: compare(mine, (u.answers ?? {}) as Answers),
-      liked: sentSet.has(u.id),
-      likesYou: recvSet.has(u.id),
-    }))
+    .map((u) => {
+      const liked = sentSet.has(u.id);
+      const likesYou = recvSet.has(u.id);
+      return {
+        profile: publicProfile(u, liked && likesYou),
+        result: compare(mine, (u.answers ?? {}) as Answers),
+        liked,
+        likesYou,
+      };
+    })
     .filter((m) => !m.result.thin)
     .sort((a, b) => b.result.score - a.result.score)
     .slice(0, limit);
@@ -101,7 +126,7 @@ export async function mutualMatches(me: DbUser): Promise<RankedMatch[]> {
   `;
   const mine = (me.answers ?? {}) as Answers;
   return rows.map((u) => ({
-    profile: publicProfile(u),
+    profile: publicProfile(u, true), // por definición son mutuos
     result: compare(mine, (u.answers ?? {}) as Answers),
     liked: true,
     likesYou: true,
@@ -157,10 +182,16 @@ export function sanitizeAnswers(input: Answers): Answers {
       continue;
     }
 
+    // Las de catálogo se validan contra el catálogo, no sólo por longitud: sin
+    // esto, un POST a mano podía guardar cualquier string de 80 caracteres, y
+    // ese texto se renderizaba como si fuera un título en la pantalla de la
+    // OTRA persona cuando se comparaban.
     const allowed = qn.catalog ? null : new Set(qn.options.map((o) => o.value));
     const values = (Array.isArray(v) ? v : [v])
       .filter((x): x is string => typeof x === "string" && x.length > 0 && x.length <= 80)
-      .filter((x) => (allowed ? allowed.has(x) : true));
+      .filter((x) =>
+        qn.catalog ? Boolean(catalogItem(qn.catalog, x)) : allowed!.has(x),
+      );
 
     if (values.length === 0) continue;
 

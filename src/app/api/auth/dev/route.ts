@@ -1,5 +1,13 @@
 import { NextResponse } from "next/server";
-import { appOrigin, devLoginEnabled, safeNext, setSession, toSession, upsertUser } from "@/lib/auth";
+import {
+  appOrigin,
+  devLoginEnabled,
+  safeNext,
+  setSession,
+  toSession,
+  upsertUser,
+} from "@/lib/auth";
+import { db } from "@/lib/db";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -20,6 +28,19 @@ export async function POST(req: Request) {
   const email = raw.trim().toLowerCase();
   if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
     return NextResponse.redirect(new URL("/?error=email-invalido", appOrigin(req)), 303);
+  }
+
+  // Sin esto, cualquiera que conozca un email podría entrar como esa persona en
+  // el entorno donde el modo prueba esté prendido. Sólo deja crear o retomar
+  // cuentas de prueba: si la cuenta ya se autenticó alguna vez con Google, no.
+  const q = await db();
+  const [existing] = await q<{ google_sub: string | null }[]>`
+    SELECT google_sub FROM users WHERE email = ${email} LIMIT 1`;
+  if (existing?.google_sub) {
+    return NextResponse.redirect(
+      new URL("/?error=esa-cuenta-usa-google", appOrigin(req)),
+      303,
+    );
   }
 
   const name = ((form?.get("name") as string | null) ?? "").trim() || email.split("@")[0];

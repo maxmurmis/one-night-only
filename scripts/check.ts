@@ -121,6 +121,20 @@ for (const q of QUESTIONS) {
   if (q.scoringMode === "complement" && !q.complementPairs?.length) {
     problems.push(`${q.id}: complement sin complementPairs`);
   }
+  // Una pregunta de complemento tiene TRES desenlaces y necesita tres textos.
+  if (q.scoringMode === "complement" && !q.sameCopy) {
+    problems.push(`${q.id}: complement sin sameCopy (el texto para cuando contestan lo MISMO)`);
+  }
+  if (q.scoringMode === "dealbreaker" && !q.clashPairs?.length) {
+    problems.push(`${q.id}: dealbreaker sin clashPairs — no va a castigar nada`);
+  }
+  for (const p of q.clashPairs ?? []) {
+    for (const v of p) {
+      if (!q.options.some((o) => o.value === v)) {
+        problems.push(`${q.id}: clashPair apunta a una opción inexistente (${v})`);
+      }
+    }
+  }
   for (const p of q.complementPairs ?? []) {
     for (const v of p) {
       if (!q.options.some((o) => o.value === v)) {

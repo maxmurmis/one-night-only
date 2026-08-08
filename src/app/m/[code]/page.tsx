@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { currentUser } from "@/lib/auth";
 import { compare, isComplete } from "@/lib/scoring";
-import { logCompare, publicProfile, userByCode } from "@/lib/users";
+import { areMutual, logCompare, publicProfile, userByCode } from "@/lib/users";
 import { TIERS } from "@/lib/tiers";
 import { Shell } from "@/components/Shell";
 import { Reveal } from "@/components/Reveal";
@@ -50,13 +50,17 @@ export default async function ComparePage({
   const result = compare((me.answers ?? {}) as Answers, (target.answers ?? {}) as Answers);
   await logCompare(me.id, target.id, result.score).catch(() => {});
 
+  // El contacto sólo viaja al cliente si el match ya es mutuo.
+  const mutual = await areMutual(me.id, target.id);
+
   return (
     <Shell active="comparar">
       <Reveal
-        me={publicProfile(me)}
-        them={publicProfile(target)}
+        me={publicProfile(me, true)}
+        them={publicProfile(target, mutual)}
         result={result}
         tiers={TIERS}
+        alreadyMutual={mutual}
       />
     </Shell>
   );

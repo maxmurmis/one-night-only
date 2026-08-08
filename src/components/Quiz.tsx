@@ -1,9 +1,16 @@
 "use client";
 
-import { useMemo, useState, useTransition } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { Answers, CatalogItem, Question } from "@/lib/types";
 import { CatalogPicker } from "./CatalogPicker";
+
+function hasValue(v: Answers[string] | undefined): boolean {
+  if (v === undefined || v === null) return false;
+  if (Array.isArray(v)) return v.length > 0;
+  if (typeof v === "string") return v.length > 0;
+  return Number.isFinite(v);
+}
 
 type Meta = {
   displayName: string;
@@ -34,10 +41,18 @@ export function Quiz({
   nextHref: string;
 }) {
   const router = useRouter();
-  const [step, setStep] = useState(0); // 0 = intro, 1..n = preguntas, n+1 = datos
+  // Si vuelve con respuestas a medias, retomamos donde quedó en vez de
+  // hacerle pasar de nuevo por la intro y las 8 preguntas que ya contestó.
+  const [step, setStep] = useState(() => {
+    const answeredCount = questions.findIndex((qq) => !hasValue(initialAnswers[qq.id]));
+    if (answeredCount <= 0) return 0;
+    return answeredCount + 1;
+  });
   const [answers, setAnswers] = useState<Answers>(initialAnswers);
   const [meta, setMeta] = useState<Meta>(initialMeta);
-  const [saving, startSaving] = useTransition();
+  const [saving, setSaving] = useState(false);
+  // Evita que un doble tap dispare dos avances (o dos envíos).
+  const locked = useRef(false);
   const [error, setError] = useState<string | null>(null);
 
   const total = questions.length;
@@ -51,50 +66,62 @@ export function Quiz({
   }
 
   function answered(qq: Question): boolean {
-    const v = answers[qq.id];
-    if (v === undefined || v === null) return false;
-    if (Array.isArray(v)) return v.length > 0;
-    if (typeof v === "string") return v.length > 0;
-    return Number.isFinite(v as number);
+    return hasValue(answers[qq.id]);
   }
 
-  async function persist(final: boolean) {
+  async function persist() {
+    if (locked.current) return;
+    locked.current = true;
+    setSaving(true);
     setError(null);
-    const res = await fetch("/api/profile", {
+    try {
+      const res = await fetch("/api/profile", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({
+          answers,
+          displayName: meta.displayName || null,
+          age: meta.age ? Number(meta.age) : null,
+          city: meta.city || null,
+          instagram: meta.instagram || null,
+          bio: meta.bio || null,
+        }),
+      });
+      if (!res.ok) {
+        const body = (await res.json().catch(() => ({}))) as { error?: string };
+        setError(body.error ?? "No se pudo guardar. Probá de nuevo.");
+        return;
+      }
+      router.push(nextHref);
+    } catch {
+      // Señal del cine: el guardado falla y hay que poder reintentar.
+      setError("Se cortó la conexión. Tocá de nuevo cuando tengas señal.");
+    } finally {
+      locked.current = false;
+      setSaving(false);
+    }
+  }
+
+  /**
+   * Guardado de fondo: si se le cierra el navegador o se queda sin señal en la
+   * fila del cine, no pierde lo contestado. Recibe las respuestas por parámetro
+   * porque las de opción única avanzan en el mismo tick en que se eligen, y el
+   * estado todavía no se actualizó.
+   */
+  function autosave(current: Answers) {
+    void fetch("/api/profile", {
       method: "POST",
       headers: { "content-type": "application/json" },
-      body: JSON.stringify({
-        answers,
-        displayName: meta.displayName || null,
-        age: meta.age ? Number(meta.age) : null,
-        city: meta.city || null,
-        instagram: meta.instagram || null,
-        bio: meta.bio || null,
-      }),
-    });
-    if (!res.ok) {
-      const body = await res.json().catch(() => ({}));
-      setError(body.error ?? "No se pudo guardar. Probá de nuevo.");
-      return false;
-    }
-    if (final) router.push(nextHref);
-    return true;
+      body: JSON.stringify({ answers: current }),
+    }).catch(() => {});
   }
 
   function next() {
     if (step === metaStep) {
-      startSaving(() => {
-        void persist(true);
-      });
+      void persist();
       return;
     }
-    // Guardado de fondo en cada avance: si se le cierra el navegador en la fila
-    // del cine, no pierde lo contestado.
-    if (step >= 1) void fetch("/api/profile", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ answers }),
-    }).catch(() => {});
+    if (step >= 1) autosave(answers);
     setStep((s) => s + 1);
   }
 
@@ -215,7 +242,11 @@ export function Quiz({
         <p className="text-sm text-[var(--color-muted)]">{done}</p>
 
         <div className="flex gap-3">
-          <button className="btn btn-ghost" onClick={() => setStep((s) => s - 1)}>
+          <button
+            className="btn btn-ghost"
+            aria-label="Volver a la pregunta anterior"
+            onClick={() => setStep((s) => s - 1)}
+          >
             ←
           </button>
           <button className="btn btn-primary flex-1" onClick={next} disabled={saving}>
@@ -287,9 +318,16 @@ export function Quiz({
                 data-on={on ? "1" : "0"}
                 onClick={() => {
                   if (q.kind === "single") {
-                    set(q.id, o.value);
+                    if (locked.current) return; // doble tap = un solo avance
+                    locked.current = true;
+                    const updated = { ...answers, [q.id]: o.value };
+                    setAnswers(updated);
+                    autosave(updated);
                     // Micro-pausa para que se vea la selección antes de avanzar.
-                    setTimeout(() => setStep((s) => s + 1), 190);
+                    setTimeout(() => {
+                      setStep((s) => s + 1);
+                      locked.current = false;
+                    }, 190);
                   } else {
                     const arr = Array.isArray(current) ? [...current] : [];
                     const i = arr.indexOf(o.value);
@@ -309,7 +347,11 @@ export function Quiz({
       )}
 
       <div className="flex gap-3">
-        <button className="btn btn-ghost" onClick={() => setStep((s) => Math.max(0, s - 1))}>
+        <button
+          className="btn btn-ghost"
+          aria-label="Volver a la pregunta anterior"
+          onClick={() => setStep((s) => Math.max(0, s - 1))}
+        >
           ←
         </button>
         <button className="btn btn-primary flex-1" onClick={next} disabled={!canAdvance}>

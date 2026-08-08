@@ -19,16 +19,21 @@ export function Reveal({
   them,
   result,
   tiers,
+  alreadyMutual,
 }: {
   me: PublicProfile;
   them: PublicProfile;
   result: MatchResult;
   tiers: Tier[];
+  /** Verificado en el servidor; sólo entonces viaja el contacto. */
+  alreadyMutual: boolean;
 }) {
   const [shown, setShown] = useState(0);
-  const [liked, setLiked] = useState(false);
-  const [mutual, setMutual] = useState(false);
+  const [liked, setLiked] = useState(alreadyMutual);
+  const [mutual, setMutual] = useState(alreadyMutual);
   const [busy, setBusy] = useState(false);
+  const [contact, setContact] = useState<string | null>(them.instagram);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const target = result.score;
@@ -48,16 +53,34 @@ export function Reveal({
   const nextTier = [...tiers].reverse().find((t) => t.min > result.score);
 
   async function sendLike() {
+    if (busy) return;
     setBusy(true);
-    const res = await fetch("/api/like", {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ userId: them.id }),
-    });
-    const data = (await res.json().catch(() => ({}))) as { mutual?: boolean };
-    setLiked(true);
-    setMutual(Boolean(data.mutual));
-    setBusy(false);
+    setError(null);
+    try {
+      const res = await fetch("/api/like", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ userId: them.id }),
+      });
+      // Marcar "like enviado" sin mirar la respuesta es mentirle a la persona:
+      // con mala señal creía que había mandado algo que nunca salió.
+      if (!res.ok) {
+        setError("No se pudo enviar. Probá de nuevo.");
+        return;
+      }
+      const data = (await res.json().catch(() => ({}))) as {
+        mutual?: boolean;
+        instagram?: string | null;
+      };
+      setLiked(true);
+      setMutual(Boolean(data.mutual));
+      // El contacto lo manda el servidor recién cuando el match es mutuo.
+      if (data.mutual && data.instagram) setContact(data.instagram);
+    } catch {
+      setError("Se cortó la conexión. Probá de nuevo.");
+    } finally {
+      setBusy(false);
+    }
   }
 
   return (
@@ -105,14 +128,14 @@ export function Reveal({
       {mutual ? (
         <div className="card w-full border-[rgba(255,200,87,0.5)] bg-[rgba(255,200,87,0.12)] p-4 text-center">
           <p className="display text-2xl text-[var(--color-gold)]">💛 Match mutuo</p>
-          {them.instagram ? (
+          {contact ? (
             <a
               className="mt-1 inline-block text-sm font-semibold text-[var(--color-cream)] underline"
-              href={`https://instagram.com/${them.instagram}`}
+              href={`https://instagram.com/${contact}`}
               target="_blank"
               rel="noreferrer noopener"
             >
-              @{them.instagram}
+              @{contact}
             </a>
           ) : (
             <p className="mt-1 text-sm text-[var(--color-muted)]">
@@ -121,13 +144,24 @@ export function Reveal({
           )}
         </div>
       ) : (
-        <button
-          className="btn btn-primary w-full text-base"
-          onClick={sendLike}
-          disabled={busy || liked}
-        >
-          {liked ? "♥ Like enviado" : `♡ Darle like a ${them.name}`}
-        </button>
+        <div className="w-full">
+          <button
+            className="btn btn-primary w-full text-base"
+            onClick={sendLike}
+            disabled={busy || liked}
+          >
+            {busy ? (
+              <span className="spin">◠</span>
+            ) : liked ? (
+              "♥ Like enviado"
+            ) : (
+              `♡ Darle like a ${them.name}`
+            )}
+          </button>
+          {error ? (
+            <p className="mt-2 text-center text-sm text-[var(--color-neon)]">{error}</p>
+          ) : null}
+        </div>
       )}
 
       {/* Coincidencias */}

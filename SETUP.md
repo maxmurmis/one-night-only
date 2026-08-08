@@ -82,8 +82,11 @@ y se integra a Vercel en un click.
 
 > Si después ponés dominio propio, agregá también
 > `https://tudominio.com/api/auth/callback` **y** seteá `APP_URL=https://tudominio.com`
-> en Vercel. Sin `APP_URL`, la app usa el dominio `.vercel.app` para armar el
-> `redirect_uri`, y Google rechaza cualquier URI no registrada.
+> en Vercel, **sólo en el entorno Production** (la UI de Vercel marca los tres por
+> default: destildá Preview y Development). Sin `APP_URL`, la app usa el dominio
+> `.vercel.app` para armar el `redirect_uri`, y Google rechaza cualquier URI no
+> registrada. La app ignora `APP_URL` en los previews justamente para que no
+> rompan.
 
 ---
 
@@ -116,9 +119,12 @@ gh repo create movie-match --private --source=. --push
 
 4. **Deploy.**
 
-> **No cargues `ALLOW_DEV_LOGIN` en producción.** La ruta se apaga sola cuando
-> `VERCEL_ENV=production`, pero no hay razón para tentar a la suerte. En los
-> deploys de *preview* sí podés ponerla para probar sin Google.
+> **`ALLOW_DEV_LOGIN` no va a Vercel, ni siquiera en preview.** El modo prueba
+> sólo se enciende si `DATABASE_URL` apunta a `localhost`/`127.0.0.1`, así que
+> aunque la variable se cuele al dashboard queda inerte. Es a propósito: un
+> preview hereda por default la misma base y el mismo `AUTH_SECRET` que
+> producción, y la cookie de sesión no lleva el host adentro — una sesión emitida
+> en preview valdría igual en producción.
 
 ### 3.3 Verificar
 

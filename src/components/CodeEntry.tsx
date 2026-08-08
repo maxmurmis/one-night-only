@@ -17,13 +17,17 @@ export function CodeEntry() {
     if (clean.length !== LEN) return;
     setBusy(true);
     setError(null);
-    const res = await fetch(`/api/compare/${clean}`);
-    if (res.ok) {
-      router.push(`/m/${clean}`);
-      return;
+    try {
+      const res = await fetch(`/api/compare/${clean}`);
+      if (res.ok) {
+        router.push(`/m/${clean}`);
+        return; // dejamos busy en true: ya estamos navegando
+      }
+      const body = (await res.json().catch(() => ({}))) as { error?: string };
+      setError(body.error ?? "No encontramos ese código.");
+    } catch {
+      setError("Se cortó la conexión. Probá de nuevo.");
     }
-    const body = (await res.json().catch(() => ({}))) as { error?: string };
-    setError(body.error ?? "No encontramos ese código.");
     setBusy(false);
   }
 

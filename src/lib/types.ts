@@ -25,7 +25,10 @@ export type Question = {
    */
   clashPairs?: [string, string][];
   weight: number;
+  /** Se muestra cuando coinciden (en complement: cuando se COMPLEMENTAN). */
   revealCopy: string;
+  /** Sólo en complement: cuando contestaron lo MISMO, que no es lo óptimo. */
+  sameCopy?: string;
   clashCopy: string;
 };
 

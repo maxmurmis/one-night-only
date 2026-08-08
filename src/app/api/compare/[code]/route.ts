@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { getSession } from "@/lib/auth";
-import { publicProfile, userByCode, userById, logCompare } from "@/lib/users";
+import { areMutual, publicProfile, userByCode, userById, logCompare } from "@/lib/users";
 import { compare, isComplete } from "@/lib/scoring";
 import type { Answers } from "@/lib/types";
 
@@ -36,5 +36,6 @@ export async function GET(
   const result = compare((me.answers ?? {}) as Answers, (target.answers ?? {}) as Answers);
   await logCompare(me.id, target.id, result.score).catch(() => {});
 
-  return NextResponse.json({ profile: publicProfile(target), result });
+  const mutual = await areMutual(me.id, target.id);
+  return NextResponse.json({ profile: publicProfile(target, mutual), result, mutual });
 }

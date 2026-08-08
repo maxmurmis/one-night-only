@@ -60,10 +60,21 @@ export function googleConfigured(): boolean {
   return Boolean(process.env.GOOGLE_CLIENT_ID && process.env.GOOGLE_CLIENT_SECRET);
 }
 
+/**
+ * El login de prueba sólo existe contra una base LOCAL.
+ *
+ * Gatearlo por entorno no alcanza: protege el destino del deploy, no los datos.
+ * Un preview de Vercel hereda por default el mismo DATABASE_URL y el mismo
+ * AUTH_SECRET que producción, y como la cookie de sesión es un HMAC sin host ni
+ * entorno adentro, una sesión emitida ahí vale igual en producción. Con la base
+ * local como condición, ese camino no existe aunque la variable se copie sin
+ * querer al dashboard.
+ */
 export function devLoginEnabled(): boolean {
-  return (
-    process.env.ALLOW_DEV_LOGIN === "true" && process.env.VERCEL_ENV !== "production"
-  );
+  if (process.env.ALLOW_DEV_LOGIN !== "true") return false;
+  if (process.env.VERCEL_ENV === "production") return false;
+  const url = process.env.DATABASE_URL ?? process.env.POSTGRES_URL ?? "";
+  return /@(127\.0\.0\.1|localhost)[:/]/.test(url);
 }
 
 /**
@@ -83,7 +94,15 @@ export function devLoginEnabled(): boolean {
  * 4. `VERCEL_URL` (previews) y localhost como últimos recursos.
  */
 export function appOrigin(req?: Request): string {
-  if (process.env.APP_URL) return process.env.APP_URL.replace(/\/$/, "");
+  // APP_URL sólo manda donde el dominio propio es el real. En un preview de
+  // Vercel (donde la variable llega por default si se cargó "para los tres
+  // entornos") apuntaría el redirect_uri al dominio de producción, y la cookie
+  // de estado del OAuth —que es host-only— quedaría en el host del preview:
+  // login roto de forma determinística, con "state-invalido" y sin reintento
+  // que lo arregle.
+  if (process.env.APP_URL && process.env.VERCEL_ENV !== "preview") {
+    return process.env.APP_URL.replace(/\/$/, "");
+  }
   if (process.env.VERCEL_ENV === "production" && process.env.VERCEL_PROJECT_PRODUCTION_URL) {
     return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
   }
@@ -237,7 +256,13 @@ export function googleAuthUrl(state: string, req?: Request): string {
   return `https://accounts.google.com/o/oauth2/v2/auth?${p}`;
 }
 
-type GoogleProfile = { sub: string; email: string; name?: string; picture?: string };
+type GoogleProfile = {
+  sub: string;
+  email: string;
+  email_verified?: boolean | string;
+  name?: string;
+  picture?: string;
+};
 
 export async function exchangeCode(code: string, req?: Request): Promise<GoogleProfile> {
   const res = await fetch("https://oauth2.googleapis.com/token", {
@@ -264,6 +289,11 @@ export async function exchangeCode(code: string, req?: Request): Promise<GoogleP
     throw new Error("id_token con audience inesperada");
   }
   if (!claims.email) throw new Error("Google no devolvió email");
+  // La identidad de la app es el email, así que uno sin verificar no sirve:
+  // habilitaría hacerse pasar por otra persona con un dominio propio.
+  if (claims.email_verified === false || claims.email_verified === "false") {
+    throw new Error("Tu email de Google no está verificado");
+  }
   return claims;
 }
 

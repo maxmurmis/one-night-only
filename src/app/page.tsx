@@ -76,7 +76,7 @@ export default async function Landing({
 
         <div className="flex flex-wrap items-center gap-2">
           <span className="chip border-[rgba(255,200,87,0.35)] text-[var(--color-gold)]">
-            ⏳ faltan {days} días
+            {days === 0 ? "🎬 es esta noche" : days === 1 ? "⏳ falta 1 día" : `⏳ faltan ${days} días`}
           </span>
           <span className="chip">🎬 {QUESTIONS.length} preguntas</span>
           <span className="chip">⚡ 2 minutos</span>

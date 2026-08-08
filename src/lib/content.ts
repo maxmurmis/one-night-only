@@ -1,4 +1,3 @@
- 
 /**
  * CONTENIDO DE LA CAMPAÑA — este es el único archivo que hay que tocar para
  * cambiar preguntas, catálogo, escalones o textos. No tiene lógica.
@@ -61,8 +60,8 @@ export const CONTENT: {
       ],
       "scoringMode": "complement",
       "weight": 9,
-      "revealCopy": "Uno dulce y el otro salado: eso no es una diferencia, es un balde compartido y la mano cruzada toda la función.",
-      "clashCopy": "Los dos quieren exactamente lo mismo y hay un solo balde. Va a haber forcejeo.",
+      "revealCopy": "Lo que pide uno no es lo que pide el otro: eso no es una diferencia, es un balde compartido y la mano cruzada toda la función.",
+      "clashCopy": "No se complementan: lo que uno quiere del candy, el otro ni lo mira. Cada uno con su balde.",
       "help": "Ojo que acá conviene NO coincidir. Después entendés por qué.",
       "complementPairs": [
         [
@@ -77,7 +76,8 @@ export const CONTENT: {
           "salado",
           "nachos"
         ]
-      ]
+      ],
+      "sameCopy": "Los dos quieren exactamente lo mismo y hay un solo balde. Va a haber forcejeo."
     },
     {
       "id": "genero-favorito",
@@ -418,7 +418,7 @@ export const CONTENT: {
       "scoringMode": "complement",
       "weight": 6,
       "revealCopy": "Uno decide y el otro se deja llevar. Se terminaron los cuarenta minutos de scroll.",
-      "clashCopy": "Los dos scrollean. Se hicieron las dos de la mañana y no vieron nada.",
+      "clashCopy": "No se complementan: o los dos quieren decidir, o ninguno quiere. Van a perder unos minutos en “vos elegí”.",
       "help": "Acá también conviene ser distintos.",
       "complementPairs": [
         [
@@ -437,7 +437,8 @@ export const CONTENT: {
           "propongo-tres",
           "scroll-eterno"
         ]
-      ]
+      ],
+      "sameCopy": "Los dos encaran la elección igual. O se ponen de acuerdo en dos minutos, o no eligen nunca."
     },
     {
       "id": "despues-de-la-funcion",

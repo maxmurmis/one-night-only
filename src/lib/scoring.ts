@@ -126,6 +126,26 @@ function complementHit(q: Question, a: string, b: string): boolean {
   return pairListed(q.complementPairs, a, b);
 }
 
+/**
+ * Qué frase mostrar.
+ *
+ * Las preguntas de complemento tienen TRES desenlaces, no dos: se complementan
+ * (1), contestaron lo mismo (0,65) o simplemente no se complementan (0,2). Con
+ * dos textos, a dos personas que habían elegido las dos pochoclo dulce se les
+ * mostraba "uno dulce y el otro salado" — y justo abajo, sus dos respuestas
+ * iguales. Pasaba en un tercio de los pares.
+ */
+function copyFor(q: Question, agree: boolean, av: AnswerValue, bv: AnswerValue): string {
+  if (q.scoringMode === "complement") {
+    const a = asArray(av)[0] ?? "";
+    const b = asArray(bv)[0] ?? "";
+    if (complementHit(q, a, b)) return q.revealCopy;
+    if (a === b) return q.sameCopy ?? q.revealCopy;
+    return q.clashCopy;
+  }
+  return agree ? q.revealCopy : q.clashCopy;
+}
+
 function isHardClash(q: Question, av: AnswerValue, bv: AnswerValue): boolean {
   // Sin lista declarada, un dealbreaker se comporta como cualquier desacuerdo.
   if (!q.clashPairs?.length) return false;
@@ -267,7 +287,7 @@ export function compare(aAnswers: Answers, bAnswers: Answers): MatchResult {
       weight: q.weight,
       similarity: s,
       agree,
-      copy: agree ? q.revealCopy : q.clashCopy,
+      copy: copyFor(q, agree, av as AnswerValue, bv as AnswerValue),
       aLabel: labelFor(q, av as AnswerValue),
       bLabel: labelFor(q, bv as AnswerValue),
       shared: shared.map((v) =>

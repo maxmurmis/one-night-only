@@ -121,8 +121,20 @@ async function createSchema(): Promise<void> {
   await sql`CREATE INDEX IF NOT EXISTS ix_compares_a ON compares (a_user, created_at DESC)`;
 }
 
+/**
+ * Chequea TODO lo que crea createSchema, no sólo `users`.
+ *
+ * Mirando una sola tabla, un fallo a mitad de camino se tomaba por una carrera
+ * inofensiva: la promesa quedaba resuelta, la instancia nunca reintentaba el
+ * DDL, y /matches tiraba 500 por `likes` inexistente mientras /api/health
+ * seguía diciendo "ok" porque sólo consultaba `users`.
+ */
 async function schemaExists(): Promise<boolean> {
-  const rows = await sql<{ ok: boolean }[]>`SELECT to_regclass('public.users') IS NOT NULL AS ok`;
+  const rows = await sql<{ ok: boolean }[]>`
+    SELECT
+      to_regclass('public.users')    IS NOT NULL AND
+      to_regclass('public.likes')    IS NOT NULL AND
+      to_regclass('public.compares') IS NOT NULL AS ok`;
   return Boolean(rows[0]?.ok);
 }
 
