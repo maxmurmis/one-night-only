@@ -31,29 +31,31 @@ function connectionString(): string {
 }
 
 /**
- * Una sola conexión por instancia, de vida corta y con timeout de sentencia.
+ * Conexiones de vida corta, pero NO una sola.
  *
- * Con `max: 3` la app se colgaba de a ratos: Vercel congela la instancia apenas
- * responde, la conexión queda abierta del lado del pooler con la transacción sin
- * cerrar (`SELECT * FROM users WHERE id = $1` en estado active esperando
- * ClientRead durante minutos), y esas conexiones zombis se acumulan hasta comerse
- * el pool del proyecto. Cuando eso pasa, el request siguiente no falla: espera un
- * lugar libre, y ahí aparecían los /matches de 90 segundos.
+ * `max: 1` parece lo correcto en serverless y acá cuelga la app entera: /matches
+ * abre varias consultas en paralelo (el padrón, los likes dados, los recibidos)
+ * y con un único lugar en el pool se traban entre ellas contra el pooler en modo
+ * transacción — 40 segundos y sin respuesta, reproducible en local. Con tres
+ * anda en 1,4s. Si algún día hay que bajarlo, primero hay que serializar esas
+ * consultas.
  *
- * - `max: 1` es lo recomendado en serverless: cada instancia ocupa un lugar, no tres.
- * - `max_lifetime` recicla la conexión aunque el pooler no avise que murió.
+ * `idle_timeout` y `max_lifetime` sí importan: Vercel congela la instancia apenas
+ * responde y la conexión queda tomada del lado del pooler con la transacción sin
+ * cerrar (se ve como `SELECT * FROM users WHERE id = $1` en estado active
+ * esperando ClientRead durante minutos). Reciclarlas evita que se acumulen.
  *
- * El cinturón que falta —`statement_timeout` e `idle_in_transaction_session_timeout`—
- * va del lado del servidor con ALTER ROLE: como parámetro de conexión el pooler en
- * modo transacción lo ignora en silencio (se pide 10s y `show statement_timeout`
- * sigue devolviendo 2min).
+ * El cinturón —`statement_timeout` e `idle_in_transaction_session_timeout`— va del
+ * lado del servidor con ALTER ROLE: como parámetro de conexión, el pooler en modo
+ * transacción lo ignora en silencio (se pide 10s y `show statement_timeout` sigue
+ * devolviendo 2min).
  */
 function makeClient() {
   const url = connectionString();
   const isLocal = /@(127\.0\.0\.1|localhost)/.test(url);
   return postgres(url, {
     prepare: false,
-    max: 1,
+    max: 3,
     idle_timeout: 10,
     max_lifetime: 60 * 5,
     connect_timeout: 10,
@@ -157,9 +159,28 @@ async function schemaExists(): Promise<boolean> {
   return Boolean(rows[0]?.ok);
 }
 
+/**
+ * El DDL no va en el camino caliente.
+ *
+ * Antes cada instancia en frío corría createSchema() completo. Todo es IF NOT
+ * EXISTS y parecía gratis, pero CREATE TABLE pide ACCESS EXCLUSIVE igual: si
+ * alguna sesión tenía una transacción abierta —cosa que pasa sola cuando Vercel
+ * congela una instancia a mitad de query— el DDL se quedaba esperando el lock y,
+ * peor, todos los SELECT que llegaban después hacían cola detrás de él. Eso eran
+ * los /matches de 90 segundos: la base sana, la query en 0,13ms, y la página
+ * esperando un lock que nadie soltaba.
+ *
+ * Ahora se pregunta primero, con un SELECT que no toma ningún lock, y sólo se
+ * crea el esquema si de verdad falta (la primera vez, o una base nueva).
+ */
+async function ensureSchemaOnce(): Promise<void> {
+  if (await schemaExists().catch(() => false)) return;
+  await createSchema();
+}
+
 export function ensureSchema(): Promise<void> {
   if (!global.__mm_schema) {
-    global.__mm_schema = createSchema().catch(async (err) => {
+    global.__mm_schema = ensureSchemaOnce().catch(async (err) => {
       // Dos instancias arrancando en frío a la vez pueden chocar en el CREATE
       // TABLE aunque diga IF NOT EXISTS (Postgres no lo serializa). Si al final
       // las tablas están, el error era de la carrera y no hay nada que reportar.
