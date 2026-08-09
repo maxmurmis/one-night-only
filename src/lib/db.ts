@@ -30,14 +30,33 @@ function connectionString(): string {
   return url;
 }
 
+/**
+ * Una sola conexión por instancia, de vida corta y con timeout de sentencia.
+ *
+ * Con `max: 3` la app se colgaba de a ratos: Vercel congela la instancia apenas
+ * responde, la conexión queda abierta del lado del pooler con la transacción sin
+ * cerrar (`SELECT * FROM users WHERE id = $1` en estado active esperando
+ * ClientRead durante minutos), y esas conexiones zombis se acumulan hasta comerse
+ * el pool del proyecto. Cuando eso pasa, el request siguiente no falla: espera un
+ * lugar libre, y ahí aparecían los /matches de 90 segundos.
+ *
+ * - `max: 1` es lo recomendado en serverless: cada instancia ocupa un lugar, no tres.
+ * - `max_lifetime` recicla la conexión aunque el pooler no avise que murió.
+ *
+ * El cinturón que falta —`statement_timeout` e `idle_in_transaction_session_timeout`—
+ * va del lado del servidor con ALTER ROLE: como parámetro de conexión el pooler en
+ * modo transacción lo ignora en silencio (se pide 10s y `show statement_timeout`
+ * sigue devolviendo 2min).
+ */
 function makeClient() {
   const url = connectionString();
   const isLocal = /@(127\.0\.0\.1|localhost)/.test(url);
   return postgres(url, {
     prepare: false,
-    max: 3,
-    idle_timeout: 20,
-    connect_timeout: 15,
+    max: 1,
+    idle_timeout: 10,
+    max_lifetime: 60 * 5,
+    connect_timeout: 10,
     ssl: isLocal ? false : "require",
   });
 }
