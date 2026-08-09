@@ -255,7 +255,7 @@ export function Quiz({
             ) : nextHref.startsWith("/m/") ? (
               "Ver nuestra compatibilidad 🎬"
             ) : (
-              "Ver mis matches 🎬"
+              "Ver mi código y mi QR 🎬"
             )}
           </button>
         </div>

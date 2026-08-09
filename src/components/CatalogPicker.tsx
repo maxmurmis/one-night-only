@@ -3,6 +3,14 @@
 import { useMemo, useState } from "react";
 import type { CatalogItem } from "@/lib/types";
 
+/**
+ * Cuántas filas se pintan por tanda. El catálogo tiene cientos de títulos y
+ * pintarlos todos de una traba el scroll en un celular de gama media; el botón
+ * "Ver más" agranda la tanda sin cortar el catálogo, que era el problema real:
+ * antes el tope era 24 fijo y la lista parecía tener 24 películas.
+ */
+const PAGE = 40;
+
 function normalize(s: string): string {
   return s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "");
 }
@@ -27,7 +35,7 @@ export function CatalogPicker({
   const results = useMemo(() => {
     const q = normalize(query.trim());
     if (!q) {
-      return [...items].sort((a, b) => b.popularity - a.popularity).slice(0, 24);
+      return [...items].sort((a, b) => b.popularity - a.popularity);
     }
     const scored: { item: CatalogItem; rank: number }[] = [];
     for (const item of items) {
@@ -42,9 +50,20 @@ export function CatalogPicker({
     }
     return scored
       .sort((a, b) => a.rank - b.rank || b.item.popularity - a.item.popularity)
-      .slice(0, 24)
       .map((s) => s.item);
   }, [items, query]);
+
+  const [shown, setShown] = useState(PAGE);
+  // Cada búsqueda nueva arranca de nuevo: si no, tipear algo después de haber
+  // expandido dejaba la lista larga y el scroll perdido a mitad de camino. Se
+  // ajusta durante el render (no en un efecto) para no pintar una tanda vieja.
+  const [lastQuery, setLastQuery] = useState(query);
+  if (query !== lastQuery) {
+    setLastQuery(query);
+    setShown(PAGE);
+  }
+  const visible = results.slice(0, shown);
+  const rest = results.length - visible.length;
 
   const full = value.length >= max;
 
@@ -89,7 +108,7 @@ export function CatalogPicker({
           </p>
         ) : (
           <ul>
-            {results.map((it) => {
+            {visible.map((it) => {
               const on = value.includes(it.id);
               return (
                 <li key={it.id}>
@@ -121,6 +140,16 @@ export function CatalogPicker({
                 </li>
               );
             })}
+            {rest > 0 ? (
+              <li>
+                <button
+                  onClick={() => setShown((s) => s + PAGE)}
+                  className="w-full px-3.5 py-3 text-center text-[0.82rem] font-semibold uppercase tracking-wider text-[var(--color-gold)]"
+                >
+                  Ver más ({rest})
+                </button>
+              </li>
+            ) : null}
           </ul>
         )}
       </div>

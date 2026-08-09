@@ -18,6 +18,9 @@ export default async function OnboardingPage({
   if (!user) redirect("/");
   const { next } = await searchParams;
 
+  // Termina en /perfil, no en /matches: ahí viven el código y el QR, que son el
+  // punto de la activación. Si llegó escaneando el QR de otro, `next` manda y lo
+  // devolvemos a esa comparación.
   return (
     <div className="mx-auto w-full max-w-lg px-5 pb-14">
       <Quiz
@@ -34,7 +37,7 @@ export default async function OnboardingPage({
         }}
         intro={COPY.micro.onboardingIntro}
         done={COPY.micro.onboardingDone}
-        nextHref={safeNext(next, "/matches")}
+        nextHref={safeNext(next, "/perfil")}
       />
     </div>
   );

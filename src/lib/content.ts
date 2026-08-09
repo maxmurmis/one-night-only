@@ -34,23 +34,18 @@ export const CONTENT: {
       "options": [
         {
           "value": "dulce",
-          "label": "Dulce, sin culpa",
+          "label": "Dulce como yo",
           "emoji": "🍬"
         },
         {
           "value": "salado",
-          "label": "Salado, es lo único serio",
+          "label": "Salado, como corresponde",
           "emoji": "🧂"
         },
         {
           "value": "mitad-y-mitad",
-          "label": "Mitad y mitad, soy diplomático",
+          "label": "Mitad y mitad, lo mejor de los dos mundos",
           "emoji": "🤝"
-        },
-        {
-          "value": "nachos",
-          "label": "Nachos con cheddar, otra liga",
-          "emoji": "🧀"
         },
         {
           "value": "nada",
@@ -67,14 +62,6 @@ export const CONTENT: {
         [
           "dulce",
           "salado"
-        ],
-        [
-          "dulce",
-          "nachos"
-        ],
-        [
-          "salado",
-          "nachos"
         ]
       ],
       "sameCopy": "Los dos quieren exactamente lo mismo y hay un solo balde. Va a haber forcejeo."
@@ -173,7 +160,7 @@ export const CONTENT: {
         },
         {
           "value": "doblada",
-          "label": "Doblada y sin culpa, vengo a descansar",
+          "label": "Doblada, el cine es para mirar la pantalla",
           "emoji": "🔊"
         },
         {
@@ -242,7 +229,7 @@ export const CONTENT: {
     {
       "id": "crush-cine",
       "section": "gustos",
-      "prompt": "Confesá: ¿quién te hace comprar la entrada solo por estar en el reparto?",
+      "prompt": "Confesá: ¿quién te hace comprar la entrada solo por estar en la peli?",
       "kind": "multi",
       "options": [],
       "scoringMode": "jaccard",
@@ -478,18 +465,18 @@ export const CONTENT: {
       "clashCopy": "Uno arranca para el bar y el otro ya pidió el auto. Timing distinto, nada personal."
     },
     {
-      "id": "silencio",
+      "id": "peli-odiada",
       "section": "vibra",
-      "prompt": "Se hace un silencio de treinta segundos en la mesa. ¿Cómo lo llevás?",
+      "prompt": "Salís del cine y la persona que te acompaña amó la película que vos odiaste. ¿Qué hacés?",
       "kind": "scale",
       "options": [],
       "scoringMode": "scale",
       "weight": 7,
-      "revealCopy": "Manejan el silencio igual. Eso es más raro y más valioso que compartir género favorito.",
-      "clashCopy": "Uno necesita llenar el aire y el otro necesita que no se lo llenen. Ojo con eso.",
+      "revealCopy": "Manejan la sinceridad igual. Ninguno de los dos va a fingir que le gustó algo que no le gustó.",
+      "clashCopy": "Uno banca la mentira piadosa y el otro la destroza en el lobby. Ojo con la charla de la salida.",
       "scaleLabels": [
-        "Me muero, lo tapo con cualquier cosa",
-        "Lo disfruto, el silencio también es charla"
+        "Digo que estuvo buenísima y listo",
+        "La destrozo ahí mismo, con argumentos"
       ]
     },
     {
@@ -2174,6 +2161,4736 @@ export const CONTENT: {
         "documental",
         "aventura"
       ]
+    },
+    {
+      "id": "el-senor-de-los-anillos-las-dos-torres",
+      "label": "El Señor de los Anillos: Las Dos Torres",
+      "popularity": 5,
+      "emoji": "🗡️",
+      "meta": "2002",
+      "search": "aventura fantasia",
+      "tags": [
+        "aventura",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "el-senor-de-los-anillos-el-retorno-del-rey",
+      "label": "El Señor de los Anillos: El Retorno del Rey",
+      "popularity": 5,
+      "emoji": "👑",
+      "meta": "2003",
+      "search": "aventura fantasia",
+      "tags": [
+        "aventura",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "el-hobbit-un-viaje-inesperado",
+      "label": "El Hobbit: Un Viaje Inesperado",
+      "popularity": 4,
+      "emoji": "🧝",
+      "meta": "2012",
+      "search": "aventura fantasia",
+      "tags": [
+        "aventura",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "harry-potter-y-la-camara-secreta",
+      "label": "Harry Potter y la Cámara Secreta",
+      "popularity": 4,
+      "emoji": "🐍",
+      "meta": "2002",
+      "search": "fantasia aventura",
+      "tags": [
+        "fantasia",
+        "aventura"
+      ]
+    },
+    {
+      "id": "harry-potter-y-el-prisionero-de-azkaban",
+      "label": "Harry Potter y el Prisionero de Azkaban",
+      "popularity": 4,
+      "emoji": "🐺",
+      "meta": "2004",
+      "search": "fantasia aventura",
+      "tags": [
+        "fantasia",
+        "aventura"
+      ]
+    },
+    {
+      "id": "harry-potter-y-el-caliz-de-fuego",
+      "label": "Harry Potter y el Cáliz de Fuego",
+      "popularity": 4,
+      "emoji": "🔥",
+      "meta": "2005",
+      "search": "fantasia aventura",
+      "tags": [
+        "fantasia",
+        "aventura"
+      ]
+    },
+    {
+      "id": "harry-potter-y-las-reliquias-de-la-muerte-parte-2",
+      "label": "Harry Potter y las Reliquias de la Muerte: Parte 2",
+      "popularity": 4,
+      "emoji": "⚡",
+      "meta": "2011",
+      "search": "fantasia aventura",
+      "tags": [
+        "fantasia",
+        "aventura"
+      ]
+    },
+    {
+      "id": "star-wars-el-imperio-contraataca",
+      "label": "Star Wars: El Imperio Contraataca",
+      "popularity": 4,
+      "emoji": "❄️",
+      "meta": "1980",
+      "search": "ciencia-ficcion aventura",
+      "tags": [
+        "ciencia-ficcion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "star-wars-el-retorno-del-jedi",
+      "label": "Star Wars: El Retorno del Jedi",
+      "popularity": 4,
+      "emoji": "🌕",
+      "meta": "1983",
+      "search": "ciencia-ficcion aventura",
+      "tags": [
+        "ciencia-ficcion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "star-wars-la-amenaza-fantasma",
+      "label": "Star Wars: La Amenaza Fantasma",
+      "popularity": 4,
+      "emoji": "🤖",
+      "meta": "1999",
+      "search": "ciencia-ficcion aventura",
+      "tags": [
+        "ciencia-ficcion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "star-wars-el-despertar-de-la-fuerza",
+      "label": "Star Wars: El Despertar de la Fuerza",
+      "popularity": 4,
+      "emoji": "✨",
+      "meta": "2015",
+      "search": "ciencia-ficcion aventura",
+      "tags": [
+        "ciencia-ficcion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "rogue-one-una-historia-de-star-wars",
+      "label": "Rogue One: Una Historia de Star Wars",
+      "popularity": 3,
+      "emoji": "🌌",
+      "meta": "2016",
+      "search": "ciencia-ficcion accion",
+      "tags": [
+        "ciencia-ficcion",
+        "accion"
+      ]
+    },
+    {
+      "id": "matrix-recargado",
+      "label": "Matrix Recargado",
+      "popularity": 3,
+      "emoji": "🕶️",
+      "meta": "2003",
+      "search": "ciencia-ficcion accion",
+      "tags": [
+        "ciencia-ficcion",
+        "accion"
+      ]
+    },
+    {
+      "id": "terminator-2-el-juicio-final",
+      "label": "Terminator 2: El Juicio Final",
+      "popularity": 4,
+      "emoji": "🦾",
+      "meta": "1991",
+      "search": "ciencia-ficcion accion",
+      "tags": [
+        "ciencia-ficcion",
+        "accion"
+      ]
+    },
+    {
+      "id": "terminator",
+      "label": "Terminator",
+      "popularity": 3,
+      "emoji": "⏳",
+      "meta": "1984",
+      "search": "ciencia-ficcion accion",
+      "tags": [
+        "ciencia-ficcion",
+        "accion"
+      ]
+    },
+    {
+      "id": "aliens-el-regreso",
+      "label": "Aliens: El Regreso",
+      "popularity": 3,
+      "emoji": "👾",
+      "meta": "1986",
+      "search": "ciencia-ficcion accion",
+      "tags": [
+        "ciencia-ficcion",
+        "accion"
+      ]
+    },
+    {
+      "id": "depredador",
+      "label": "Depredador",
+      "popularity": 3,
+      "emoji": "🌴",
+      "meta": "1987",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "duro-de-matar",
+      "label": "Duro de Matar",
+      "popularity": 4,
+      "emoji": "🏢",
+      "meta": "1988",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "volver-al-futuro-ii",
+      "label": "Volver al Futuro II",
+      "popularity": 4,
+      "emoji": "🛹",
+      "meta": "1989",
+      "search": "ciencia-ficcion comedia",
+      "tags": [
+        "ciencia-ficcion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "indiana-jones-en-busca-del-arca-perdida",
+      "label": "Indiana Jones: En Busca del Arca Perdida",
+      "popularity": 4,
+      "emoji": "🤠",
+      "meta": "1981",
+      "search": "aventura accion",
+      "tags": [
+        "aventura",
+        "accion"
+      ]
+    },
+    {
+      "id": "indiana-jones-y-la-ultima-cruzada",
+      "label": "Indiana Jones y la Última Cruzada",
+      "popularity": 4,
+      "emoji": "🏺",
+      "meta": "1989",
+      "search": "aventura accion",
+      "tags": [
+        "aventura",
+        "accion"
+      ]
+    },
+    {
+      "id": "piratas-del-caribe-la-maldicion-del-perla-negra",
+      "label": "Piratas del Caribe: La Maldición del Perla Negra",
+      "popularity": 5,
+      "emoji": "🏴‍☠️",
+      "meta": "2003",
+      "search": "aventura fantasia",
+      "tags": [
+        "aventura",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "mision-imposible",
+      "label": "Misión Imposible",
+      "popularity": 4,
+      "emoji": "🕵️",
+      "meta": "1996",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "mision-imposible-nacion-secreta",
+      "label": "Misión Imposible: Nación Secreta",
+      "popularity": 3,
+      "emoji": "✈️",
+      "meta": "2015",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "casino-royale",
+      "label": "Casino Royale",
+      "popularity": 4,
+      "emoji": "🃏",
+      "meta": "2006",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "skyfall",
+      "label": "Skyfall",
+      "popularity": 4,
+      "emoji": "🔫",
+      "meta": "2012",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "el-caso-bourne",
+      "label": "El Caso Bourne",
+      "popularity": 3,
+      "emoji": "🎒",
+      "meta": "2002",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "maxima-velocidad",
+      "label": "Máxima Velocidad",
+      "popularity": 3,
+      "emoji": "🚌",
+      "meta": "1994",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "punto-de-quiebre",
+      "label": "Punto de Quiebre",
+      "popularity": 2,
+      "emoji": "🏄",
+      "meta": "1991",
+      "search": "accion crimen",
+      "tags": [
+        "accion",
+        "crimen"
+      ]
+    },
+    {
+      "id": "rapidos-y-furiosos-7",
+      "label": "Rápidos y Furiosos 7",
+      "popularity": 4,
+      "emoji": "🚗",
+      "meta": "2015",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "john-wick",
+      "label": "John Wick",
+      "popularity": 4,
+      "emoji": "🐕",
+      "meta": "2014",
+      "search": "accion crimen",
+      "tags": [
+        "accion",
+        "crimen"
+      ]
+    },
+    {
+      "id": "john-wick-4",
+      "label": "John Wick 4",
+      "popularity": 3,
+      "emoji": "🕴️",
+      "meta": "2023",
+      "search": "accion crimen",
+      "tags": [
+        "accion",
+        "crimen"
+      ]
+    },
+    {
+      "id": "gladiador-ii",
+      "label": "Gladiador II",
+      "popularity": 3,
+      "emoji": "🛡️",
+      "meta": "2024",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "top-gun",
+      "label": "Top Gun",
+      "popularity": 4,
+      "emoji": "🛩️",
+      "meta": "1986",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "rocky-iv",
+      "label": "Rocky IV",
+      "popularity": 3,
+      "emoji": "🥊",
+      "meta": "1985",
+      "search": "drama accion",
+      "tags": [
+        "drama",
+        "accion"
+      ]
+    },
+    {
+      "id": "creed-corazon-de-campeon",
+      "label": "Creed: Corazón de Campeón",
+      "popularity": 3,
+      "emoji": "🥊",
+      "meta": "2015",
+      "search": "drama accion",
+      "tags": [
+        "drama",
+        "accion"
+      ]
+    },
+    {
+      "id": "karate-kid",
+      "label": "Karate Kid",
+      "popularity": 4,
+      "emoji": "🥋",
+      "meta": "1984",
+      "search": "drama aventura",
+      "tags": [
+        "drama",
+        "aventura"
+      ]
+    },
+    {
+      "id": "rambo",
+      "label": "Rambo",
+      "popularity": 3,
+      "emoji": "🎯",
+      "meta": "1982",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-quinto-elemento",
+      "label": "El Quinto Elemento",
+      "popularity": 3,
+      "emoji": "🚕",
+      "meta": "1997",
+      "search": "ciencia-ficcion aventura",
+      "tags": [
+        "ciencia-ficcion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "dia-de-la-independencia",
+      "label": "Día de la Independencia",
+      "popularity": 4,
+      "emoji": "🛸",
+      "meta": "1996",
+      "search": "ciencia-ficcion accion",
+      "tags": [
+        "ciencia-ficcion",
+        "accion"
+      ]
+    },
+    {
+      "id": "armageddon",
+      "label": "Armageddon",
+      "popularity": 4,
+      "emoji": "☄️",
+      "meta": "1998",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "impacto-profundo",
+      "label": "Impacto Profundo",
+      "popularity": 2,
+      "emoji": "🌊",
+      "meta": "1998",
+      "search": "drama ciencia-ficcion",
+      "tags": [
+        "drama",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "twister",
+      "label": "Twister",
+      "popularity": 3,
+      "emoji": "🌪️",
+      "meta": "1996",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "el-dia-despues-de-manana",
+      "label": "El Día Después de Mañana",
+      "popularity": 3,
+      "emoji": "🧊",
+      "meta": "2004",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "2012",
+      "label": "2012",
+      "popularity": 3,
+      "emoji": "🌋",
+      "meta": "2009",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "godzilla",
+      "label": "Godzilla",
+      "popularity": 3,
+      "emoji": "🦖",
+      "meta": "2014",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "king-kong",
+      "label": "King Kong",
+      "popularity": 3,
+      "emoji": "🦍",
+      "meta": "2005",
+      "search": "aventura accion",
+      "tags": [
+        "aventura",
+        "accion"
+      ]
+    },
+    {
+      "id": "jurassic-world",
+      "label": "Jurassic World",
+      "popularity": 4,
+      "emoji": "🦕",
+      "meta": "2015",
+      "search": "aventura accion",
+      "tags": [
+        "aventura",
+        "accion"
+      ]
+    },
+    {
+      "id": "el-mundo-perdido-jurassic-park",
+      "label": "El Mundo Perdido: Jurassic Park",
+      "popularity": 3,
+      "emoji": "🌿",
+      "meta": "1997",
+      "search": "aventura accion",
+      "tags": [
+        "aventura",
+        "accion"
+      ]
+    },
+    {
+      "id": "los-juegos-del-hambre",
+      "label": "Los Juegos del Hambre",
+      "popularity": 4,
+      "emoji": "🏹",
+      "meta": "2012",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "duna-parte-dos",
+      "label": "Duna: Parte Dos",
+      "popularity": 4,
+      "emoji": "🏜️",
+      "meta": "2024",
+      "search": "ciencia-ficcion aventura",
+      "tags": [
+        "ciencia-ficcion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "godzilla-minus-one",
+      "label": "Godzilla Minus One",
+      "popularity": 2,
+      "emoji": "🌊",
+      "meta": "2023",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "iron-man",
+      "label": "Iron Man",
+      "popularity": 5,
+      "emoji": "🦾",
+      "meta": "2008",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "los-vengadores",
+      "label": "Los Vengadores",
+      "popularity": 5,
+      "emoji": "🛡️",
+      "meta": "2012",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "avengers-infinity-war",
+      "label": "Avengers: Infinity War",
+      "popularity": 5,
+      "emoji": "💎",
+      "meta": "2018",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "capitan-america-civil-war",
+      "label": "Capitán América: Civil War",
+      "popularity": 4,
+      "emoji": "🇺🇸",
+      "meta": "2016",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "guardianes-de-la-galaxia",
+      "label": "Guardianes de la Galaxia",
+      "popularity": 4,
+      "emoji": "🎧",
+      "meta": "2014",
+      "search": "accion comedia",
+      "tags": [
+        "accion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "thor-ragnarok",
+      "label": "Thor: Ragnarok",
+      "popularity": 4,
+      "emoji": "🔨",
+      "meta": "2017",
+      "search": "accion comedia",
+      "tags": [
+        "accion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "pantera-negra",
+      "label": "Pantera Negra",
+      "popularity": 4,
+      "emoji": "🐈‍⬛",
+      "meta": "2018",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "spider-man-sin-camino-a-casa",
+      "label": "Spider-Man: Sin Camino a Casa",
+      "popularity": 5,
+      "emoji": "🕸️",
+      "meta": "2021",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "el-hombre-arana",
+      "label": "El Hombre Araña",
+      "popularity": 4,
+      "emoji": "🕷️",
+      "meta": "2002",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "deadpool",
+      "label": "Deadpool",
+      "popularity": 4,
+      "emoji": "🩸",
+      "meta": "2016",
+      "search": "accion comedia",
+      "tags": [
+        "accion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "deadpool-y-wolverine",
+      "label": "Deadpool y Wolverine",
+      "popularity": 4,
+      "emoji": "🍻",
+      "meta": "2024",
+      "search": "accion comedia",
+      "tags": [
+        "accion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "logan",
+      "label": "Logan",
+      "popularity": 4,
+      "emoji": "🥃",
+      "meta": "2017",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "x-men",
+      "label": "X-Men",
+      "popularity": 3,
+      "emoji": "🧬",
+      "meta": "2000",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "batman-inicia",
+      "label": "Batman Inicia",
+      "popularity": 4,
+      "emoji": "🦇",
+      "meta": "2005",
+      "search": "accion crimen",
+      "tags": [
+        "accion",
+        "crimen"
+      ]
+    },
+    {
+      "id": "the-batman",
+      "label": "The Batman",
+      "popularity": 4,
+      "emoji": "🌧️",
+      "meta": "2022",
+      "search": "crimen thriller",
+      "tags": [
+        "crimen",
+        "thriller"
+      ]
+    },
+    {
+      "id": "batman-de-tim-burton",
+      "label": "Batman de Tim Burton",
+      "popularity": 3,
+      "emoji": "🃏",
+      "meta": "1989",
+      "search": "accion crimen",
+      "tags": [
+        "accion",
+        "crimen"
+      ]
+    },
+    {
+      "id": "el-hombre-de-acero",
+      "label": "El Hombre de Acero",
+      "popularity": 3,
+      "emoji": "🦸",
+      "meta": "2013",
+      "search": "accion ciencia-ficcion",
+      "tags": [
+        "accion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "mujer-maravilla",
+      "label": "Mujer Maravilla",
+      "popularity": 4,
+      "emoji": "🪢",
+      "meta": "2017",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "superman",
+      "label": "Superman",
+      "popularity": 3,
+      "emoji": "🧢",
+      "meta": "1978",
+      "search": "accion aventura",
+      "tags": [
+        "accion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "los-increibles",
+      "label": "Los Increíbles",
+      "popularity": 5,
+      "emoji": "👨‍👩‍👧‍👦",
+      "meta": "2004",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "watchmen",
+      "label": "Watchmen",
+      "popularity": 2,
+      "emoji": "🕰️",
+      "meta": "2009",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "buscando-a-nemo",
+      "label": "Buscando a Nemo",
+      "popularity": 5,
+      "emoji": "🐠",
+      "meta": "2003",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "buscando-a-dory",
+      "label": "Buscando a Dory",
+      "popularity": 4,
+      "emoji": "🐟",
+      "meta": "2016",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "monsters-inc",
+      "label": "Monsters, Inc.",
+      "popularity": 5,
+      "emoji": "👹",
+      "meta": "2001",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "ratatouille",
+      "label": "Ratatouille",
+      "popularity": 4,
+      "emoji": "🐀",
+      "meta": "2007",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "valiente",
+      "label": "Valiente",
+      "popularity": 3,
+      "emoji": "🏹",
+      "meta": "2012",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "frozen-una-aventura-congelada",
+      "label": "Frozen: Una Aventura Congelada",
+      "popularity": 5,
+      "emoji": "⛄",
+      "meta": "2013",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "frozen-ii",
+      "label": "Frozen II",
+      "popularity": 4,
+      "emoji": "🌊",
+      "meta": "2019",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "moana-un-mar-de-aventuras",
+      "label": "Moana: Un Mar de Aventuras",
+      "popularity": 4,
+      "emoji": "🌺",
+      "meta": "2016",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "encanto",
+      "label": "Encanto",
+      "popularity": 4,
+      "emoji": "🦋",
+      "meta": "2021",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "zootopia",
+      "label": "Zootopia",
+      "popularity": 4,
+      "emoji": "🦊",
+      "meta": "2016",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "enredados",
+      "label": "Enredados",
+      "popularity": 4,
+      "emoji": "💇",
+      "meta": "2010",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "la-sirenita",
+      "label": "La Sirenita",
+      "popularity": 4,
+      "emoji": "🧜",
+      "meta": "1989",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "la-bella-y-la-bestia",
+      "label": "La Bella y la Bestia",
+      "popularity": 4,
+      "emoji": "🌹",
+      "meta": "1991",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "aladdin",
+      "label": "Aladdín",
+      "popularity": 4,
+      "emoji": "🧞",
+      "meta": "1992",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "mulan",
+      "label": "Mulán",
+      "popularity": 4,
+      "emoji": "⚔️",
+      "meta": "1998",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "bambi",
+      "label": "Bambi",
+      "popularity": 3,
+      "emoji": "🦌",
+      "meta": "1942",
+      "search": "animacion drama",
+      "tags": [
+        "animacion",
+        "drama"
+      ]
+    },
+    {
+      "id": "dumbo",
+      "label": "Dumbo",
+      "popularity": 3,
+      "emoji": "🐘",
+      "meta": "1941",
+      "search": "animacion drama",
+      "tags": [
+        "animacion",
+        "drama"
+      ]
+    },
+    {
+      "id": "blancanieves-y-los-siete-enanitos",
+      "label": "Blancanieves y los Siete Enanitos",
+      "popularity": 3,
+      "emoji": "🍎",
+      "meta": "1937",
+      "search": "animacion fantasia",
+      "tags": [
+        "animacion",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "la-dama-y-el-vagabundo",
+      "label": "La Dama y el Vagabundo",
+      "popularity": 3,
+      "emoji": "🍝",
+      "meta": "1955",
+      "search": "animacion romance",
+      "tags": [
+        "animacion",
+        "romance"
+      ]
+    },
+    {
+      "id": "el-jorobado-de-notre-dame",
+      "label": "El Jorobado de Notre Dame",
+      "popularity": 3,
+      "emoji": "🔔",
+      "meta": "1996",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "hercules",
+      "label": "Hércules",
+      "popularity": 3,
+      "emoji": "⚡",
+      "meta": "1997",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "tarzan",
+      "label": "Tarzán",
+      "popularity": 3,
+      "emoji": "🌳",
+      "meta": "1999",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "lilo-stitch",
+      "label": "Lilo & Stitch",
+      "popularity": 4,
+      "emoji": "🌺",
+      "meta": "2002",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "kung-fu-panda",
+      "label": "Kung Fu Panda",
+      "popularity": 4,
+      "emoji": "🐼",
+      "meta": "2008",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "como-entrenar-a-tu-dragon",
+      "label": "Cómo Entrenar a tu Dragón",
+      "popularity": 4,
+      "emoji": "🐉",
+      "meta": "2010",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "madagascar",
+      "label": "Madagascar",
+      "popularity": 4,
+      "emoji": "🦓",
+      "meta": "2005",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "la-era-de-hielo",
+      "label": "La Era de Hielo",
+      "popularity": 4,
+      "emoji": "🦣",
+      "meta": "2002",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "mi-villano-favorito",
+      "label": "Mi Villano Favorito",
+      "popularity": 4,
+      "emoji": "🌙",
+      "meta": "2010",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "minions",
+      "label": "Minions",
+      "popularity": 4,
+      "emoji": "🍌",
+      "meta": "2015",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "rio",
+      "label": "Río",
+      "popularity": 3,
+      "emoji": "🦜",
+      "meta": "2011",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "happy-feet-el-pinguino",
+      "label": "Happy Feet: El Pingüino",
+      "popularity": 3,
+      "emoji": "🐧",
+      "meta": "2006",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "soul",
+      "label": "Soul",
+      "popularity": 4,
+      "emoji": "🎹",
+      "meta": "2020",
+      "search": "animacion drama",
+      "tags": [
+        "animacion",
+        "drama"
+      ]
+    },
+    {
+      "id": "luca",
+      "label": "Luca",
+      "popularity": 3,
+      "emoji": "🛵",
+      "meta": "2021",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "red",
+      "label": "Red",
+      "popularity": 3,
+      "emoji": "🐼",
+      "meta": "2022",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "elementos",
+      "label": "Elementos",
+      "popularity": 3,
+      "emoji": "🔥",
+      "meta": "2023",
+      "search": "animacion romance",
+      "tags": [
+        "animacion",
+        "romance"
+      ]
+    },
+    {
+      "id": "intensamente-2",
+      "label": "Intensamente 2",
+      "popularity": 5,
+      "emoji": "😰",
+      "meta": "2024",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "spider-man-cruzando-el-multiverso",
+      "label": "Spider-Man: Cruzando el Multiverso",
+      "popularity": 4,
+      "emoji": "🕸️",
+      "meta": "2023",
+      "search": "animacion accion",
+      "tags": [
+        "animacion",
+        "accion"
+      ]
+    },
+    {
+      "id": "el-gato-con-botas-el-ultimo-deseo",
+      "label": "El Gato con Botas: El Último Deseo",
+      "popularity": 4,
+      "emoji": "🐈",
+      "meta": "2022",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "shrek-2",
+      "label": "Shrek 2",
+      "popularity": 5,
+      "emoji": "🍸",
+      "meta": "2004",
+      "search": "animacion comedia",
+      "tags": [
+        "animacion",
+        "comedia"
+      ]
+    },
+    {
+      "id": "robots",
+      "label": "Robots",
+      "popularity": 2,
+      "emoji": "🔧",
+      "meta": "2005",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "coraline-y-la-puerta-secreta",
+      "label": "Coraline y la Puerta Secreta",
+      "popularity": 3,
+      "emoji": "🔘",
+      "meta": "2009",
+      "search": "animacion terror",
+      "tags": [
+        "animacion",
+        "terror"
+      ]
+    },
+    {
+      "id": "el-extrano-mundo-de-jack",
+      "label": "El Extraño Mundo de Jack",
+      "popularity": 4,
+      "emoji": "🎃",
+      "meta": "1993",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "persepolis",
+      "label": "Persépolis",
+      "popularity": 2,
+      "emoji": "✒️",
+      "meta": "2007",
+      "search": "animacion drama",
+      "tags": [
+        "animacion",
+        "drama"
+      ]
+    },
+    {
+      "id": "vals-con-bashir",
+      "label": "Vals con Bashir",
+      "popularity": 1,
+      "emoji": "🎖️",
+      "meta": "2008",
+      "search": "animacion documental",
+      "tags": [
+        "animacion",
+        "documental"
+      ]
+    },
+    {
+      "id": "flow",
+      "label": "Flow",
+      "popularity": 3,
+      "emoji": "🐈",
+      "meta": "2024",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "la-princesa-mononoke",
+      "label": "La Princesa Mononoke",
+      "popularity": 3,
+      "emoji": "🐗",
+      "meta": "1997",
+      "search": "animacion fantasia",
+      "tags": [
+        "animacion",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "mi-vecino-totoro",
+      "label": "Mi Vecino Totoro",
+      "popularity": 3,
+      "emoji": "🌰",
+      "meta": "1988",
+      "search": "animacion fantasia",
+      "tags": [
+        "animacion",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "el-castillo-ambulante",
+      "label": "El Castillo Ambulante",
+      "popularity": 3,
+      "emoji": "🏰",
+      "meta": "2004",
+      "search": "animacion fantasia",
+      "tags": [
+        "animacion",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "el-nino-y-la-garza",
+      "label": "El Niño y la Garza",
+      "popularity": 2,
+      "emoji": "🪶",
+      "meta": "2023",
+      "search": "animacion fantasia",
+      "tags": [
+        "animacion",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "akira",
+      "label": "Akira",
+      "popularity": 2,
+      "emoji": "🏍️",
+      "meta": "1988",
+      "search": "animacion ciencia-ficcion",
+      "tags": [
+        "animacion",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "perfect-blue",
+      "label": "Perfect Blue",
+      "popularity": 1,
+      "emoji": "🎤",
+      "meta": "1997",
+      "search": "animacion thriller",
+      "tags": [
+        "animacion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "la-tumba-de-las-luciernagas",
+      "label": "La Tumba de las Luciérnagas",
+      "popularity": 2,
+      "emoji": "🕯️",
+      "meta": "1988",
+      "search": "animacion drama",
+      "tags": [
+        "animacion",
+        "drama"
+      ]
+    },
+    {
+      "id": "it-eso",
+      "label": "It: Eso",
+      "popularity": 4,
+      "emoji": "🎈",
+      "meta": "2017",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "el-conjuro",
+      "label": "El Conjuro",
+      "popularity": 4,
+      "emoji": "🪆",
+      "meta": "2013",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "actividad-paranormal",
+      "label": "Actividad Paranormal",
+      "popularity": 3,
+      "emoji": "📹",
+      "meta": "2007",
+      "search": "terror",
+      "tags": [
+        "terror"
+      ]
+    },
+    {
+      "id": "el-aro",
+      "label": "El Aro",
+      "popularity": 3,
+      "emoji": "📼",
+      "meta": "2002",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "se-lo-que-hicieron-el-verano-pasado",
+      "label": "Sé lo que Hicieron el Verano Pasado",
+      "popularity": 3,
+      "emoji": "🪝",
+      "meta": "1997",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "halloween",
+      "label": "Halloween",
+      "popularity": 3,
+      "emoji": "🔪",
+      "meta": "1978",
+      "search": "terror",
+      "tags": [
+        "terror"
+      ]
+    },
+    {
+      "id": "pesadilla-en-la-calle-elm",
+      "label": "Pesadilla en la Calle Elm",
+      "popularity": 3,
+      "emoji": "😴",
+      "meta": "1984",
+      "search": "terror fantasia",
+      "tags": [
+        "terror",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "viernes-13",
+      "label": "Viernes 13",
+      "popularity": 3,
+      "emoji": "🏕️",
+      "meta": "1980",
+      "search": "terror",
+      "tags": [
+        "terror"
+      ]
+    },
+    {
+      "id": "el-proyecto-blair-witch",
+      "label": "El Proyecto Blair Witch",
+      "popularity": 3,
+      "emoji": "🌲",
+      "meta": "1999",
+      "search": "terror",
+      "tags": [
+        "terror"
+      ]
+    },
+    {
+      "id": "nosferatu",
+      "label": "Nosferatu",
+      "popularity": 2,
+      "emoji": "🦇",
+      "meta": "2024",
+      "search": "terror drama",
+      "tags": [
+        "terror",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-bebe-de-rosemary",
+      "label": "El Bebé de Rosemary",
+      "popularity": 2,
+      "emoji": "👶",
+      "meta": "1968",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "carrie",
+      "label": "Carrie",
+      "popularity": 2,
+      "emoji": "🩸",
+      "meta": "1976",
+      "search": "terror drama",
+      "tags": [
+        "terror",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-noche-de-los-muertos-vivientes",
+      "label": "La Noche de los Muertos Vivientes",
+      "popularity": 2,
+      "emoji": "🧟",
+      "meta": "1968",
+      "search": "terror",
+      "tags": [
+        "terror"
+      ]
+    },
+    {
+      "id": "un-lugar-en-silencio",
+      "label": "Un Lugar en Silencio",
+      "popularity": 4,
+      "emoji": "🤫",
+      "meta": "2018",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "bird-box-a-ciegas",
+      "label": "Bird Box: A Ciegas",
+      "popularity": 3,
+      "emoji": "🙈",
+      "meta": "2018",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "nosotros",
+      "label": "Nosotros",
+      "popularity": 3,
+      "emoji": "✂️",
+      "meta": "2019",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "la-bruja",
+      "label": "La Bruja",
+      "popularity": 2,
+      "emoji": "🐐",
+      "meta": "2015",
+      "search": "terror drama",
+      "tags": [
+        "terror",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-faro",
+      "label": "El Faro",
+      "popularity": 1,
+      "emoji": "🗼",
+      "meta": "2019",
+      "search": "terror drama",
+      "tags": [
+        "terror",
+        "drama"
+      ]
+    },
+    {
+      "id": "terrifier-3",
+      "label": "Terrifier 3",
+      "popularity": 2,
+      "emoji": "🤡",
+      "meta": "2024",
+      "search": "terror",
+      "tags": [
+        "terror"
+      ]
+    },
+    {
+      "id": "los-otros",
+      "label": "Los Otros",
+      "popularity": 3,
+      "emoji": "🕯️",
+      "meta": "2001",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "el-orfanato",
+      "label": "El Orfanato",
+      "popularity": 3,
+      "emoji": "🎭",
+      "meta": "2007",
+      "search": "terror drama",
+      "tags": [
+        "terror",
+        "drama"
+      ]
+    },
+    {
+      "id": "rec",
+      "label": "REC",
+      "popularity": 2,
+      "emoji": "📷",
+      "meta": "2007",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "dejame-entrar",
+      "label": "Déjame Entrar",
+      "popularity": 1,
+      "emoji": "❄️",
+      "meta": "2008",
+      "search": "terror romance",
+      "tags": [
+        "terror",
+        "romance"
+      ]
+    },
+    {
+      "id": "longlegs",
+      "label": "Longlegs",
+      "popularity": 2,
+      "emoji": "🪆",
+      "meta": "2024",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "hablame",
+      "label": "Háblame",
+      "popularity": 2,
+      "emoji": "🖐️",
+      "meta": "2022",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "zombieland-tierra-de-zombies",
+      "label": "Zombieland: Tierra de Zombies",
+      "popularity": 3,
+      "emoji": "🍰",
+      "meta": "2009",
+      "search": "terror comedia",
+      "tags": [
+        "terror",
+        "comedia"
+      ]
+    },
+    {
+      "id": "guerra-mundial-z",
+      "label": "Guerra Mundial Z",
+      "popularity": 3,
+      "emoji": "🚁",
+      "meta": "2013",
+      "search": "accion terror",
+      "tags": [
+        "accion",
+        "terror"
+      ]
+    },
+    {
+      "id": "28-dias-despues",
+      "label": "28 Días Después",
+      "popularity": 3,
+      "emoji": "🚴",
+      "meta": "2002",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "saw-el-juego-del-miedo",
+      "label": "Saw: El Juego del Miedo",
+      "popularity": 3,
+      "emoji": "🧩",
+      "meta": "2004",
+      "search": "terror thriller",
+      "tags": [
+        "terror",
+        "thriller"
+      ]
+    },
+    {
+      "id": "superbad",
+      "label": "Superbad",
+      "popularity": 3,
+      "emoji": "🍺",
+      "meta": "2007",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "escuela-de-rock",
+      "label": "Escuela de Rock",
+      "popularity": 4,
+      "emoji": "🎸",
+      "meta": "2003",
+      "search": "comedia musical",
+      "tags": [
+        "comedia",
+        "musical"
+      ]
+    },
+    {
+      "id": "ace-ventura-un-detective-diferente",
+      "label": "Ace Ventura: Un Detective Diferente",
+      "popularity": 3,
+      "emoji": "🦜",
+      "meta": "1994",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "la-mascara",
+      "label": "La Máscara",
+      "popularity": 4,
+      "emoji": "🟢",
+      "meta": "1994",
+      "search": "comedia fantasia",
+      "tags": [
+        "comedia",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "mi-pobre-angelito",
+      "label": "Mi Pobre Angelito",
+      "popularity": 5,
+      "emoji": "🏠",
+      "meta": "1990",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "elf-el-duende",
+      "label": "Elf: El Duende",
+      "popularity": 3,
+      "emoji": "🍬",
+      "meta": "2003",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "los-cazafantasmas",
+      "label": "Los Cazafantasmas",
+      "popularity": 4,
+      "emoji": "👻",
+      "meta": "1984",
+      "search": "comedia fantasia",
+      "tags": [
+        "comedia",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "hombres-de-negro",
+      "label": "Hombres de Negro",
+      "popularity": 4,
+      "emoji": "🕶️",
+      "meta": "1997",
+      "search": "comedia ciencia-ficcion",
+      "tags": [
+        "comedia",
+        "ciencia-ficcion"
+      ]
+    },
+    {
+      "id": "el-show-de-truman",
+      "label": "El Show de Truman",
+      "popularity": 4,
+      "emoji": "📺",
+      "meta": "1998",
+      "search": "drama comedia",
+      "tags": [
+        "drama",
+        "comedia"
+      ]
+    },
+    {
+      "id": "mejor-imposible",
+      "label": "Mejor Imposible",
+      "popularity": 3,
+      "emoji": "🐕",
+      "meta": "1997",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "el-diario-de-bridget-jones",
+      "label": "El Diario de Bridget Jones",
+      "popularity": 4,
+      "emoji": "📔",
+      "meta": "2001",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "damas-en-guerra",
+      "label": "Damas en Guerra",
+      "popularity": 3,
+      "emoji": "👰",
+      "meta": "2011",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "todopoderoso",
+      "label": "Todopoderoso",
+      "popularity": 3,
+      "emoji": "☁️",
+      "meta": "2003",
+      "search": "comedia fantasia",
+      "tags": [
+        "comedia",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "zoolander",
+      "label": "Zoolander",
+      "popularity": 3,
+      "emoji": "💇",
+      "meta": "2001",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "austin-powers",
+      "label": "Austin Powers",
+      "popularity": 3,
+      "emoji": "🕺",
+      "meta": "1997",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "loco-por-mary",
+      "label": "Loco por Mary",
+      "popularity": 3,
+      "emoji": "🐶",
+      "meta": "1998",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "ocho-apellidos-vascos",
+      "label": "Ocho Apellidos Vascos",
+      "popularity": 3,
+      "emoji": "🇪🇸",
+      "meta": "2014",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "toc-toc",
+      "label": "Toc Toc",
+      "popularity": 3,
+      "emoji": "🚪",
+      "meta": "2017",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "la-comunidad",
+      "label": "La Comunidad",
+      "popularity": 2,
+      "emoji": "🏢",
+      "meta": "2000",
+      "search": "comedia thriller",
+      "tags": [
+        "comedia",
+        "thriller"
+      ]
+    },
+    {
+      "id": "mujeres-al-borde-de-un-ataque-de-nervios",
+      "label": "Mujeres al Borde de un Ataque de Nervios",
+      "popularity": 2,
+      "emoji": "☎️",
+      "meta": "1988",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-hoyo",
+      "label": "El Hoyo",
+      "popularity": 3,
+      "emoji": "🕳️",
+      "meta": "2019",
+      "search": "ciencia-ficcion thriller",
+      "tags": [
+        "ciencia-ficcion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "campeones",
+      "label": "Campeones",
+      "popularity": 2,
+      "emoji": "🏀",
+      "meta": "2018",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "perfectos-desconocidos",
+      "label": "Perfectos Desconocidos",
+      "popularity": 3,
+      "emoji": "📱",
+      "meta": "2016",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "una-noche-fuera-de-control",
+      "label": "Una Noche Fuera de Control",
+      "popularity": 2,
+      "emoji": "🎲",
+      "meta": "2009",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "ted",
+      "label": "Ted",
+      "popularity": 3,
+      "emoji": "🧸",
+      "meta": "2012",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "son-como-ninos",
+      "label": "Son como Niños",
+      "popularity": 3,
+      "emoji": "🛶",
+      "meta": "2010",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "chicas-malas",
+      "label": "Chicas Malas",
+      "popularity": 3,
+      "emoji": "💅",
+      "meta": "2024",
+      "search": "comedia musical",
+      "tags": [
+        "comedia",
+        "musical"
+      ]
+    },
+    {
+      "id": "luna-de-avellaneda",
+      "label": "Luna de Avellaneda",
+      "popularity": 4,
+      "emoji": "🏟️",
+      "meta": "2004",
+      "search": "drama comedia",
+      "tags": [
+        "drama",
+        "comedia"
+      ]
+    },
+    {
+      "id": "el-aura",
+      "label": "El Aura",
+      "popularity": 3,
+      "emoji": "🦌",
+      "meta": "2005",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "kamchatka",
+      "label": "Kamchatka",
+      "popularity": 3,
+      "emoji": "🎲",
+      "meta": "2002",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "un-cuento-chino",
+      "label": "Un Cuento Chino",
+      "popularity": 4,
+      "emoji": "🐄",
+      "meta": "2011",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-clan",
+      "label": "El Clan",
+      "popularity": 4,
+      "emoji": "🏠",
+      "meta": "2015",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "carancho",
+      "label": "Carancho",
+      "popularity": 3,
+      "emoji": "🚑",
+      "meta": "2010",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "leonera",
+      "label": "Leonera",
+      "popularity": 2,
+      "emoji": "🍼",
+      "meta": "2008",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "elefante-blanco",
+      "label": "Elefante Blanco",
+      "popularity": 3,
+      "emoji": "⛪",
+      "meta": "2012",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "tiempo-de-valientes",
+      "label": "Tiempo de Valientes",
+      "popularity": 3,
+      "emoji": "🔫",
+      "meta": "2005",
+      "search": "comedia accion",
+      "tags": [
+        "comedia",
+        "accion"
+      ]
+    },
+    {
+      "id": "papeles-en-el-viento",
+      "label": "Papeles en el Viento",
+      "popularity": 3,
+      "emoji": "⚽",
+      "meta": "2015",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "corazon-de-leon",
+      "label": "Corazón de León",
+      "popularity": 4,
+      "emoji": "🦁",
+      "meta": "2013",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "me-case-con-un-boludo",
+      "label": "Me Casé con un Boludo",
+      "popularity": 4,
+      "emoji": "💍",
+      "meta": "2016",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "el-futbol-o-yo",
+      "label": "El Fútbol o Yo",
+      "popularity": 3,
+      "emoji": "📺",
+      "meta": "2017",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "baneros-3-todopoderosos",
+      "label": "Bañeros 3: Todopoderosos",
+      "popularity": 3,
+      "emoji": "🏖️",
+      "meta": "2006",
+      "search": "comedia",
+      "tags": [
+        "comedia"
+      ]
+    },
+    {
+      "id": "casi-leyendas",
+      "label": "Casi Leyendas",
+      "popularity": 2,
+      "emoji": "🎸",
+      "meta": "2017",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-raton-perez",
+      "label": "El Ratón Pérez",
+      "popularity": 3,
+      "emoji": "🦷",
+      "meta": "2006",
+      "search": "animacion aventura",
+      "tags": [
+        "animacion",
+        "aventura"
+      ]
+    },
+    {
+      "id": "anita",
+      "label": "Anita",
+      "popularity": 2,
+      "emoji": "🧩",
+      "meta": "2009",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "el-bonaerense",
+      "label": "El Bonaerense",
+      "popularity": 2,
+      "emoji": "🚔",
+      "meta": "2002",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "iluminados-por-el-fuego",
+      "label": "Iluminados por el Fuego",
+      "popularity": 2,
+      "emoji": "🎖️",
+      "meta": "2005",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "cronica-de-una-fuga",
+      "label": "Crónica de una Fuga",
+      "popularity": 2,
+      "emoji": "🕳️",
+      "meta": "2006",
+      "search": "drama thriller",
+      "tags": [
+        "drama",
+        "thriller"
+      ]
+    },
+    {
+      "id": "los-marziano",
+      "label": "Los Marziano",
+      "popularity": 2,
+      "emoji": "🏡",
+      "meta": "2011",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "las-viudas-de-los-jueves",
+      "label": "Las Viudas de los Jueves",
+      "popularity": 3,
+      "emoji": "🏊",
+      "meta": "2009",
+      "search": "drama thriller",
+      "tags": [
+        "drama",
+        "thriller"
+      ]
+    },
+    {
+      "id": "tesis-sobre-un-homicidio",
+      "label": "Tesis sobre un Homicidio",
+      "popularity": 3,
+      "emoji": "⚖️",
+      "meta": "2013",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "el-perro",
+      "label": "El Perro",
+      "popularity": 2,
+      "emoji": "🐕",
+      "meta": "2004",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "whisky-romeo-zulu",
+      "label": "Whisky Romeo Zulu",
+      "popularity": 2,
+      "emoji": "✈️",
+      "meta": "2004",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "aballay",
+      "label": "Aballay",
+      "popularity": 1,
+      "emoji": "🐎",
+      "meta": "2010",
+      "search": "drama aventura",
+      "tags": [
+        "drama",
+        "aventura"
+      ]
+    },
+    {
+      "id": "rojo",
+      "label": "Rojo",
+      "popularity": 2,
+      "emoji": "🌒",
+      "meta": "2018",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-patota",
+      "label": "La Patota",
+      "popularity": 2,
+      "emoji": "🏫",
+      "meta": "2015",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "los-delincuentes",
+      "label": "Los Delincuentes",
+      "popularity": 2,
+      "emoji": "💼",
+      "meta": "2023",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "trenque-lauquen",
+      "label": "Trenque Lauquen",
+      "popularity": 1,
+      "emoji": "🌾",
+      "meta": "2022",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "muchachos-la-pelicula-de-la-gente",
+      "label": "Muchachos, la Película de la Gente",
+      "popularity": 4,
+      "emoji": "🏆",
+      "meta": "2023",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "diego-maradona",
+      "label": "Diego Maradona",
+      "popularity": 3,
+      "emoji": "⚽",
+      "meta": "2019",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "4x4",
+      "label": "4x4",
+      "popularity": 2,
+      "emoji": "🚙",
+      "meta": "2019",
+      "search": "thriller",
+      "tags": [
+        "thriller"
+      ]
+    },
+    {
+      "id": "yo-adolescente",
+      "label": "Yo, Adolescente",
+      "popularity": 2,
+      "emoji": "📓",
+      "meta": "2019",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "el-profugo",
+      "label": "El Prófugo",
+      "popularity": 1,
+      "emoji": "🎼",
+      "meta": "2020",
+      "search": "terror drama",
+      "tags": [
+        "terror",
+        "drama"
+      ]
+    },
+    {
+      "id": "nieve-negra",
+      "label": "Nieve Negra",
+      "popularity": 2,
+      "emoji": "🏔️",
+      "meta": "2017",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "que-sea-ley",
+      "label": "Que Sea Ley",
+      "popularity": 1,
+      "emoji": "💚",
+      "meta": "2019",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "despues-del-silencio",
+      "label": "Después del Silencio",
+      "popularity": 1,
+      "emoji": "🎬",
+      "meta": "2023",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "volver",
+      "label": "Volver",
+      "popularity": 3,
+      "emoji": "🌬️",
+      "meta": "2006",
+      "search": "drama comedia",
+      "tags": [
+        "drama",
+        "comedia"
+      ]
+    },
+    {
+      "id": "hable-con-ella",
+      "label": "Hable con Ella",
+      "popularity": 2,
+      "emoji": "💃",
+      "meta": "2002",
+      "search": "drama romance",
+      "tags": [
+        "drama",
+        "romance"
+      ]
+    },
+    {
+      "id": "dolor-y-gloria",
+      "label": "Dolor y Gloria",
+      "popularity": 2,
+      "emoji": "🎞️",
+      "meta": "2019",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "mar-adentro",
+      "label": "Mar Adentro",
+      "popularity": 3,
+      "emoji": "🌊",
+      "meta": "2004",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "celda-211",
+      "label": "Celda 211",
+      "popularity": 2,
+      "emoji": "🔒",
+      "meta": "2009",
+      "search": "crimen thriller",
+      "tags": [
+        "crimen",
+        "thriller"
+      ]
+    },
+    {
+      "id": "la-piel-que-habito",
+      "label": "La Piel que Habito",
+      "popularity": 2,
+      "emoji": "🧵",
+      "meta": "2011",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "biutiful",
+      "label": "Biutiful",
+      "popularity": 2,
+      "emoji": "🕯️",
+      "meta": "2010",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "babel",
+      "label": "Babel",
+      "popularity": 3,
+      "emoji": "🌍",
+      "meta": "2006",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "21-gramos",
+      "label": "21 Gramos",
+      "popularity": 2,
+      "emoji": "⚖️",
+      "meta": "2003",
+      "search": "drama thriller",
+      "tags": [
+        "drama",
+        "thriller"
+      ]
+    },
+    {
+      "id": "sin-nombre",
+      "label": "Sin Nombre",
+      "popularity": 1,
+      "emoji": "🚂",
+      "meta": "2009",
+      "search": "drama crimen",
+      "tags": [
+        "drama",
+        "crimen"
+      ]
+    },
+    {
+      "id": "la-jaula-de-oro",
+      "label": "La Jaula de Oro",
+      "popularity": 1,
+      "emoji": "🚃",
+      "meta": "2013",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "gueros",
+      "label": "Güeros",
+      "popularity": 1,
+      "emoji": "📻",
+      "meta": "2014",
+      "search": "drama comedia",
+      "tags": [
+        "drama",
+        "comedia"
+      ]
+    },
+    {
+      "id": "nuevo-orden",
+      "label": "Nuevo Orden",
+      "popularity": 1,
+      "emoji": "🚨",
+      "meta": "2020",
+      "search": "drama thriller",
+      "tags": [
+        "drama",
+        "thriller"
+      ]
+    },
+    {
+      "id": "bardo",
+      "label": "Bardo",
+      "popularity": 1,
+      "emoji": "🪶",
+      "meta": "2022",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "la-isla-minima",
+      "label": "La Isla Mínima",
+      "popularity": 2,
+      "emoji": "🐦",
+      "meta": "2014",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "contratiempo",
+      "label": "Contratiempo",
+      "popularity": 3,
+      "emoji": "⏱️",
+      "meta": "2016",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "el-laberinto-de-las-ovejas",
+      "label": "El Laberinto de las Ovejas",
+      "popularity": 1,
+      "emoji": "🐑",
+      "meta": "2019",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "pinocho-de-guillermo-del-toro",
+      "label": "Pinocho de Guillermo del Toro",
+      "popularity": 3,
+      "emoji": "🪵",
+      "meta": "2022",
+      "search": "animacion fantasia",
+      "tags": [
+        "animacion",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "la-forma-del-agua",
+      "label": "La Forma del Agua",
+      "popularity": 3,
+      "emoji": "🐟",
+      "meta": "2017",
+      "search": "fantasia romance",
+      "tags": [
+        "fantasia",
+        "romance"
+      ]
+    },
+    {
+      "id": "el-espinazo-del-diablo",
+      "label": "El Espinazo del Diablo",
+      "popularity": 2,
+      "emoji": "💣",
+      "meta": "2001",
+      "search": "terror drama",
+      "tags": [
+        "terror",
+        "drama"
+      ]
+    },
+    {
+      "id": "cronos",
+      "label": "Cronos",
+      "popularity": 1,
+      "emoji": "⏳",
+      "meta": "1993",
+      "search": "terror fantasia",
+      "tags": [
+        "terror",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "emilia-perez",
+      "label": "Emilia Pérez",
+      "popularity": 2,
+      "emoji": "🎤",
+      "meta": "2024",
+      "search": "musical crimen",
+      "tags": [
+        "musical",
+        "crimen"
+      ]
+    },
+    {
+      "id": "cadena-perpetua",
+      "label": "Cadena Perpetua",
+      "popularity": 5,
+      "emoji": "🔨",
+      "meta": "1994",
+      "search": "drama crimen",
+      "tags": [
+        "drama",
+        "crimen"
+      ]
+    },
+    {
+      "id": "buenos-muchachos",
+      "label": "Buenos Muchachos",
+      "popularity": 4,
+      "emoji": "🍝",
+      "meta": "1990",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-padrino-ii",
+      "label": "El Padrino II",
+      "popularity": 4,
+      "emoji": "🍊",
+      "meta": "1974",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "scarface",
+      "label": "Scarface",
+      "popularity": 4,
+      "emoji": "🌴",
+      "meta": "1983",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "casino",
+      "label": "Casino",
+      "popularity": 3,
+      "emoji": "🎰",
+      "meta": "1995",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-lobo-de-wall-street",
+      "label": "El Lobo de Wall Street",
+      "popularity": 5,
+      "emoji": "💸",
+      "meta": "2013",
+      "search": "crimen comedia",
+      "tags": [
+        "crimen",
+        "comedia"
+      ]
+    },
+    {
+      "id": "los-infiltrados",
+      "label": "Los Infiltrados",
+      "popularity": 4,
+      "emoji": "🐀",
+      "meta": "2006",
+      "search": "crimen thriller",
+      "tags": [
+        "crimen",
+        "thriller"
+      ]
+    },
+    {
+      "id": "el-aviador",
+      "label": "El Aviador",
+      "popularity": 3,
+      "emoji": "✈️",
+      "meta": "2004",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "bastardos-sin-gloria",
+      "label": "Bastardos sin Gloria",
+      "popularity": 4,
+      "emoji": "🎬",
+      "meta": "2009",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "django-sin-cadenas",
+      "label": "Django sin Cadenas",
+      "popularity": 4,
+      "emoji": "🔗",
+      "meta": "2012",
+      "search": "accion drama",
+      "tags": [
+        "accion",
+        "drama"
+      ]
+    },
+    {
+      "id": "habia-una-vez-en-hollywood",
+      "label": "Había una Vez en Hollywood",
+      "popularity": 4,
+      "emoji": "📺",
+      "meta": "2019",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "los-ocho-mas-odiados",
+      "label": "Los Ocho Más Odiados",
+      "popularity": 3,
+      "emoji": "❄️",
+      "meta": "2015",
+      "search": "crimen thriller",
+      "tags": [
+        "crimen",
+        "thriller"
+      ]
+    },
+    {
+      "id": "jackie-brown",
+      "label": "Jackie Brown",
+      "popularity": 2,
+      "emoji": "✈️",
+      "meta": "1997",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "sin-lugar-para-los-debiles",
+      "label": "Sin Lugar para los Débiles",
+      "popularity": 3,
+      "emoji": "🪙",
+      "meta": "2007",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "fargo",
+      "label": "Fargo",
+      "popularity": 3,
+      "emoji": "🪓",
+      "meta": "1996",
+      "search": "crimen comedia",
+      "tags": [
+        "crimen",
+        "comedia"
+      ]
+    },
+    {
+      "id": "doce-hombres-en-pugna",
+      "label": "Doce Hombres en Pugna",
+      "popularity": 3,
+      "emoji": "⚖️",
+      "meta": "1957",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "la-ventana-indiscreta",
+      "label": "La Ventana Indiscreta",
+      "popularity": 3,
+      "emoji": "🪟",
+      "meta": "1954",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "vertigo",
+      "label": "Vértigo",
+      "popularity": 3,
+      "emoji": "🌀",
+      "meta": "1958",
+      "search": "thriller romance",
+      "tags": [
+        "thriller",
+        "romance"
+      ]
+    },
+    {
+      "id": "el-ciudadano",
+      "label": "El Ciudadano",
+      "popularity": 3,
+      "emoji": "🛷",
+      "meta": "1941",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "el-ocaso-de-una-vida",
+      "label": "El Ocaso de una Vida",
+      "popularity": 2,
+      "emoji": "🎞️",
+      "meta": "1950",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "con-faldas-y-a-lo-loco",
+      "label": "Con Faldas y a lo Loco",
+      "popularity": 3,
+      "emoji": "🎷",
+      "meta": "1959",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "desayuno-con-diamantes",
+      "label": "Desayuno con Diamantes",
+      "popularity": 3,
+      "emoji": "💎",
+      "meta": "1961",
+      "search": "romance comedia",
+      "tags": [
+        "romance",
+        "comedia"
+      ]
+    },
+    {
+      "id": "lawrence-de-arabia",
+      "label": "Lawrence de Arabia",
+      "popularity": 2,
+      "emoji": "🐪",
+      "meta": "1962",
+      "search": "aventura drama",
+      "tags": [
+        "aventura",
+        "drama"
+      ]
+    },
+    {
+      "id": "2001-odisea-del-espacio",
+      "label": "2001: Odisea del Espacio",
+      "popularity": 3,
+      "emoji": "🪐",
+      "meta": "1968",
+      "search": "ciencia-ficcion drama",
+      "tags": [
+        "ciencia-ficcion",
+        "drama"
+      ]
+    },
+    {
+      "id": "apocalipsis-now",
+      "label": "Apocalipsis Now",
+      "popularity": 3,
+      "emoji": "🚁",
+      "meta": "1979",
+      "search": "drama accion",
+      "tags": [
+        "drama",
+        "accion"
+      ]
+    },
+    {
+      "id": "el-pianista",
+      "label": "El Pianista",
+      "popularity": 4,
+      "emoji": "🎹",
+      "meta": "2002",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "la-lista-de-schindler",
+      "label": "La Lista de Schindler",
+      "popularity": 4,
+      "emoji": "🕯️",
+      "meta": "1993",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "rescatando-al-soldado-ryan",
+      "label": "Rescatando al Soldado Ryan",
+      "popularity": 4,
+      "emoji": "🪖",
+      "meta": "1998",
+      "search": "drama accion",
+      "tags": [
+        "drama",
+        "accion"
+      ]
+    },
+    {
+      "id": "corazon-valiente",
+      "label": "Corazón Valiente",
+      "popularity": 4,
+      "emoji": "🏴",
+      "meta": "1995",
+      "search": "drama accion",
+      "tags": [
+        "drama",
+        "accion"
+      ]
+    },
+    {
+      "id": "naufrago",
+      "label": "Náufrago",
+      "popularity": 4,
+      "emoji": "🏐",
+      "meta": "2000",
+      "search": "drama aventura",
+      "tags": [
+        "drama",
+        "aventura"
+      ]
+    },
+    {
+      "id": "12-anos-de-esclavitud",
+      "label": "12 Años de Esclavitud",
+      "popularity": 3,
+      "emoji": "⛓️",
+      "meta": "2013",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "green-book-una-amistad-sin-fronteras",
+      "label": "Green Book: Una Amistad sin Fronteras",
+      "popularity": 4,
+      "emoji": "🚗",
+      "meta": "2018",
+      "search": "drama comedia",
+      "tags": [
+        "drama",
+        "comedia"
+      ]
+    },
+    {
+      "id": "el-discurso-del-rey",
+      "label": "El Discurso del Rey",
+      "popularity": 3,
+      "emoji": "🎙️",
+      "meta": "2010",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "una-mente-brillante",
+      "label": "Una Mente Brillante",
+      "popularity": 4,
+      "emoji": "🧠",
+      "meta": "2001",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "la-teoria-del-todo",
+      "label": "La Teoría del Todo",
+      "popularity": 3,
+      "emoji": "🌌",
+      "meta": "2014",
+      "search": "drama romance",
+      "tags": [
+        "drama",
+        "romance"
+      ]
+    },
+    {
+      "id": "tiempos-modernos",
+      "label": "Tiempos Modernos",
+      "popularity": 3,
+      "emoji": "⚙️",
+      "meta": "1936",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "luces-de-la-ciudad",
+      "label": "Luces de la Ciudad",
+      "popularity": 2,
+      "emoji": "🌃",
+      "meta": "1931",
+      "search": "comedia romance",
+      "tags": [
+        "comedia",
+        "romance"
+      ]
+    },
+    {
+      "id": "el-gran-dictador",
+      "label": "El Gran Dictador",
+      "popularity": 3,
+      "emoji": "🌍",
+      "meta": "1940",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "metropolis",
+      "label": "Metrópolis",
+      "popularity": 2,
+      "emoji": "🏙️",
+      "meta": "1927",
+      "search": "ciencia-ficcion drama",
+      "tags": [
+        "ciencia-ficcion",
+        "drama"
+      ]
+    },
+    {
+      "id": "ladron-de-bicicletas",
+      "label": "Ladrón de Bicicletas",
+      "popularity": 2,
+      "emoji": "🚲",
+      "meta": "1948",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "ocho-y-medio",
+      "label": "Ocho y Medio",
+      "popularity": 1,
+      "emoji": "🎩",
+      "meta": "1963",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "la-dolce-vita",
+      "label": "La Dolce Vita",
+      "popularity": 2,
+      "emoji": "⛲",
+      "meta": "1960",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "los-400-golpes",
+      "label": "Los 400 Golpes",
+      "popularity": 2,
+      "emoji": "🏃",
+      "meta": "1959",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "sin-aliento",
+      "label": "Sin Aliento",
+      "popularity": 1,
+      "emoji": "🚬",
+      "meta": "1960",
+      "search": "drama crimen",
+      "tags": [
+        "drama",
+        "crimen"
+      ]
+    },
+    {
+      "id": "rashomon",
+      "label": "Rashomon",
+      "popularity": 2,
+      "emoji": "🌧️",
+      "meta": "1950",
+      "search": "drama crimen",
+      "tags": [
+        "drama",
+        "crimen"
+      ]
+    },
+    {
+      "id": "los-siete-samurais",
+      "label": "Los Siete Samuráis",
+      "popularity": 2,
+      "emoji": "🗡️",
+      "meta": "1954",
+      "search": "aventura drama",
+      "tags": [
+        "aventura",
+        "drama"
+      ]
+    },
+    {
+      "id": "ran",
+      "label": "Ran",
+      "popularity": 1,
+      "emoji": "🏯",
+      "meta": "1985",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "yi-yi",
+      "label": "Yi Yi",
+      "popularity": 1,
+      "emoji": "📷",
+      "meta": "2000",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "memorias-de-un-asesino",
+      "label": "Memorias de un Asesino",
+      "popularity": 2,
+      "emoji": "🌾",
+      "meta": "2003",
+      "search": "crimen thriller",
+      "tags": [
+        "crimen",
+        "thriller"
+      ]
+    },
+    {
+      "id": "tren-bala-a-busan",
+      "label": "Tren Bala a Busan",
+      "popularity": 3,
+      "emoji": "🚄",
+      "meta": "2016",
+      "search": "terror accion",
+      "tags": [
+        "terror",
+        "accion"
+      ]
+    },
+    {
+      "id": "la-vida-de-los-otros",
+      "label": "La Vida de los Otros",
+      "popularity": 2,
+      "emoji": "🎧",
+      "meta": "2006",
+      "search": "drama thriller",
+      "tags": [
+        "drama",
+        "thriller"
+      ]
+    },
+    {
+      "id": "corre-lola-corre",
+      "label": "Corre, Lola, Corre",
+      "popularity": 2,
+      "emoji": "🏃‍♀️",
+      "meta": "1998",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-experimento",
+      "label": "El Experimento",
+      "popularity": 2,
+      "emoji": "🔬",
+      "meta": "2001",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-ola",
+      "label": "La Ola",
+      "popularity": 2,
+      "emoji": "🌊",
+      "meta": "2008",
+      "search": "drama thriller",
+      "tags": [
+        "drama",
+        "thriller"
+      ]
+    },
+    {
+      "id": "el-odio",
+      "label": "El Odio",
+      "popularity": 2,
+      "emoji": "🏙️",
+      "meta": "1995",
+      "search": "drama crimen",
+      "tags": [
+        "drama",
+        "crimen"
+      ]
+    },
+    {
+      "id": "intocables",
+      "label": "Intocables",
+      "popularity": 4,
+      "emoji": "♿",
+      "meta": "2011",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-gran-belleza",
+      "label": "La Gran Belleza",
+      "popularity": 1,
+      "emoji": "🍸",
+      "meta": "2013",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "cria-cuervos",
+      "label": "Cría Cuervos",
+      "popularity": 1,
+      "emoji": "🐦",
+      "meta": "1976",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "crimen-ferpecto",
+      "label": "Crimen Ferpecto",
+      "popularity": 1,
+      "emoji": "🔪",
+      "meta": "2004",
+      "search": "comedia crimen",
+      "tags": [
+        "comedia",
+        "crimen"
+      ]
+    },
+    {
+      "id": "bohemian-rhapsody",
+      "label": "Bohemian Rhapsody",
+      "popularity": 5,
+      "emoji": "🎤",
+      "meta": "2018",
+      "search": "musical drama",
+      "tags": [
+        "musical",
+        "drama"
+      ]
+    },
+    {
+      "id": "rocketman",
+      "label": "Rocketman",
+      "popularity": 3,
+      "emoji": "🕶️",
+      "meta": "2019",
+      "search": "musical drama",
+      "tags": [
+        "musical",
+        "drama"
+      ]
+    },
+    {
+      "id": "nace-una-estrella",
+      "label": "Nace una Estrella",
+      "popularity": 4,
+      "emoji": "🎙️",
+      "meta": "2018",
+      "search": "musical romance",
+      "tags": [
+        "musical",
+        "romance"
+      ]
+    },
+    {
+      "id": "los-miserables",
+      "label": "Los Miserables",
+      "popularity": 4,
+      "emoji": "🥖",
+      "meta": "2012",
+      "search": "musical drama",
+      "tags": [
+        "musical",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-gran-showman",
+      "label": "El Gran Showman",
+      "popularity": 4,
+      "emoji": "🎪",
+      "meta": "2017",
+      "search": "musical drama",
+      "tags": [
+        "musical",
+        "drama"
+      ]
+    },
+    {
+      "id": "chicago",
+      "label": "Chicago",
+      "popularity": 3,
+      "emoji": "🎩",
+      "meta": "2002",
+      "search": "musical crimen",
+      "tags": [
+        "musical",
+        "crimen"
+      ]
+    },
+    {
+      "id": "moulin-rouge",
+      "label": "Moulin Rouge",
+      "popularity": 3,
+      "emoji": "💃",
+      "meta": "2001",
+      "search": "musical romance",
+      "tags": [
+        "musical",
+        "romance"
+      ]
+    },
+    {
+      "id": "wicked",
+      "label": "Wicked",
+      "popularity": 4,
+      "emoji": "💚",
+      "meta": "2024",
+      "search": "musical fantasia",
+      "tags": [
+        "musical",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "un-completo-desconocido",
+      "label": "Un Completo Desconocido",
+      "popularity": 3,
+      "emoji": "🎸",
+      "meta": "2024",
+      "search": "musical drama",
+      "tags": [
+        "musical",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-cisne-negro",
+      "label": "El Cisne Negro",
+      "popularity": 4,
+      "emoji": "🦢",
+      "meta": "2010",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "requiem-por-un-sueno",
+      "label": "Réquiem por un Sueño",
+      "popularity": 3,
+      "emoji": "💊",
+      "meta": "2000",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "amadeus",
+      "label": "Amadeus",
+      "popularity": 3,
+      "emoji": "🎻",
+      "meta": "1984",
+      "search": "musical drama",
+      "tags": [
+        "musical",
+        "drama"
+      ]
+    },
+    {
+      "id": "sonrisas-y-lagrimas",
+      "label": "Sonrisas y Lágrimas",
+      "popularity": 3,
+      "emoji": "🎶",
+      "meta": "1965",
+      "search": "musical drama",
+      "tags": [
+        "musical",
+        "drama"
+      ]
+    },
+    {
+      "id": "west-side-story",
+      "label": "West Side Story",
+      "popularity": 2,
+      "emoji": "🔪",
+      "meta": "1961",
+      "search": "musical romance",
+      "tags": [
+        "musical",
+        "romance"
+      ]
+    },
+    {
+      "id": "hairspray",
+      "label": "Hairspray",
+      "popularity": 3,
+      "emoji": "💇",
+      "meta": "2007",
+      "search": "musical comedia",
+      "tags": [
+        "musical",
+        "comedia"
+      ]
+    },
+    {
+      "id": "pitch-perfect",
+      "label": "Pitch Perfect",
+      "popularity": 3,
+      "emoji": "🎤",
+      "meta": "2012",
+      "search": "musical comedia",
+      "tags": [
+        "musical",
+        "comedia"
+      ]
+    },
+    {
+      "id": "high-school-musical",
+      "label": "High School Musical",
+      "popularity": 4,
+      "emoji": "🏀",
+      "meta": "2006",
+      "search": "musical romance",
+      "tags": [
+        "musical",
+        "romance"
+      ]
+    },
+    {
+      "id": "sing-ven-y-canta",
+      "label": "Sing: ¡Ven y Canta!",
+      "popularity": 3,
+      "emoji": "🎙️",
+      "meta": "2016",
+      "search": "animacion musical",
+      "tags": [
+        "animacion",
+        "musical"
+      ]
+    },
+    {
+      "id": "mystic-river",
+      "label": "Mystic River",
+      "popularity": 2,
+      "emoji": "🌉",
+      "meta": "2003",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "million-dollar-baby",
+      "label": "Million Dollar Baby",
+      "popularity": 3,
+      "emoji": "🥊",
+      "meta": "2004",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "gran-torino",
+      "label": "Gran Torino",
+      "popularity": 3,
+      "emoji": "🚗",
+      "meta": "2008",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "belleza-americana",
+      "label": "Belleza Americana",
+      "popularity": 3,
+      "emoji": "🌹",
+      "meta": "1999",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "el-sexto-sentido",
+      "label": "El Sexto Sentido",
+      "popularity": 4,
+      "emoji": "👻",
+      "meta": "1999",
+      "search": "thriller terror",
+      "tags": [
+        "thriller",
+        "terror"
+      ]
+    },
+    {
+      "id": "el-gran-truco",
+      "label": "El Gran Truco",
+      "popularity": 4,
+      "emoji": "🎩",
+      "meta": "2006",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "memento",
+      "label": "Memento",
+      "popularity": 3,
+      "emoji": "📸",
+      "meta": "2000",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "la-isla-siniestra",
+      "label": "La Isla Siniestra",
+      "popularity": 4,
+      "emoji": "🌊",
+      "meta": "2010",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "prisioneros",
+      "label": "Prisioneros",
+      "popularity": 3,
+      "emoji": "🔦",
+      "meta": "2013",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "sicario-tierra-de-nadie",
+      "label": "Sicario: Tierra de Nadie",
+      "popularity": 3,
+      "emoji": "🚁",
+      "meta": "2015",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "zodiaco",
+      "label": "Zodíaco",
+      "popularity": 3,
+      "emoji": "✉️",
+      "meta": "2007",
+      "search": "crimen thriller",
+      "tags": [
+        "crimen",
+        "thriller"
+      ]
+    },
+    {
+      "id": "los-hombres-que-no-amaban-a-las-mujeres",
+      "label": "Los Hombres que no Amaban a las Mujeres",
+      "popularity": 2,
+      "emoji": "🖤",
+      "meta": "2011",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "la-chica-del-tren",
+      "label": "La Chica del Tren",
+      "popularity": 3,
+      "emoji": "🚆",
+      "meta": "2016",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "busqueda-implacable",
+      "label": "Búsqueda Implacable",
+      "popularity": 4,
+      "emoji": "📞",
+      "meta": "2008",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "primicia-mortal",
+      "label": "Primicia Mortal",
+      "popularity": 3,
+      "emoji": "📹",
+      "meta": "2014",
+      "search": "thriller crimen",
+      "tags": [
+        "thriller",
+        "crimen"
+      ]
+    },
+    {
+      "id": "el-caso-sloane",
+      "label": "El Caso Sloane",
+      "popularity": 2,
+      "emoji": "💼",
+      "meta": "2016",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-red-social",
+      "label": "La Red Social",
+      "popularity": 4,
+      "emoji": "💻",
+      "meta": "2010",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "conclave",
+      "label": "Cónclave",
+      "popularity": 2,
+      "emoji": "⛪",
+      "meta": "2024",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-zona-de-interes",
+      "label": "La Zona de Interés",
+      "popularity": 1,
+      "emoji": "🏡",
+      "meta": "2023",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "el-renacido",
+      "label": "El Renacido",
+      "popularity": 4,
+      "emoji": "🐻",
+      "meta": "2015",
+      "search": "aventura drama",
+      "tags": [
+        "aventura",
+        "drama"
+      ]
+    },
+    {
+      "id": "birdman",
+      "label": "Birdman",
+      "popularity": 3,
+      "emoji": "🪶",
+      "meta": "2014",
+      "search": "drama comedia",
+      "tags": [
+        "drama",
+        "comedia"
+      ]
+    },
+    {
+      "id": "1917",
+      "label": "1917",
+      "popularity": 3,
+      "emoji": "🕰️",
+      "meta": "2019",
+      "search": "drama accion",
+      "tags": [
+        "drama",
+        "accion"
+      ]
+    },
+    {
+      "id": "dunkerque",
+      "label": "Dunkerque",
+      "popularity": 3,
+      "emoji": "🛥️",
+      "meta": "2017",
+      "search": "drama accion",
+      "tags": [
+        "drama",
+        "accion"
+      ]
+    },
+    {
+      "id": "fuego-contra-fuego",
+      "label": "Fuego contra Fuego",
+      "popularity": 3,
+      "emoji": "🏦",
+      "meta": "1995",
+      "search": "crimen accion",
+      "tags": [
+        "crimen",
+        "accion"
+      ]
+    },
+    {
+      "id": "el-fugitivo",
+      "label": "El Fugitivo",
+      "popularity": 3,
+      "emoji": "🚂",
+      "meta": "1993",
+      "search": "accion thriller",
+      "tags": [
+        "accion",
+        "thriller"
+      ]
+    },
+    {
+      "id": "traffic",
+      "label": "Traffic",
+      "popularity": 2,
+      "emoji": "🚗",
+      "meta": "2000",
+      "search": "crimen drama",
+      "tags": [
+        "crimen",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-gran-apuesta",
+      "label": "La Gran Apuesta",
+      "popularity": 3,
+      "emoji": "📉",
+      "meta": "2015",
+      "search": "drama comedia",
+      "tags": [
+        "drama",
+        "comedia"
+      ]
+    },
+    {
+      "id": "contagio",
+      "label": "Contagio",
+      "popularity": 3,
+      "emoji": "🦠",
+      "meta": "2011",
+      "search": "thriller drama",
+      "tags": [
+        "thriller",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-curioso-caso-de-benjamin-button",
+      "label": "El Curioso Caso de Benjamin Button",
+      "popularity": 4,
+      "emoji": "⏳",
+      "meta": "2008",
+      "search": "drama romance",
+      "tags": [
+        "drama",
+        "romance"
+      ]
+    },
+    {
+      "id": "un-amor-para-recordar",
+      "label": "Un Amor para Recordar",
+      "popularity": 4,
+      "emoji": "🌟",
+      "meta": "2002",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "como-si-fuera-la-primera-vez",
+      "label": "Como Si Fuera la Primera Vez",
+      "popularity": 4,
+      "emoji": "🐧",
+      "meta": "2004",
+      "search": "romance comedia",
+      "tags": [
+        "romance",
+        "comedia"
+      ]
+    },
+    {
+      "id": "sintonia-de-amor",
+      "label": "Sintonía de Amor",
+      "popularity": 3,
+      "emoji": "📻",
+      "meta": "1993",
+      "search": "romance comedia",
+      "tags": [
+        "romance",
+        "comedia"
+      ]
+    },
+    {
+      "id": "tienes-un-e-mail",
+      "label": "Tienes un E-mail",
+      "popularity": 3,
+      "emoji": "📧",
+      "meta": "1998",
+      "search": "romance comedia",
+      "tags": [
+        "romance",
+        "comedia"
+      ]
+    },
+    {
+      "id": "ghost-la-sombra-del-amor",
+      "label": "Ghost: La Sombra del Amor",
+      "popularity": 4,
+      "emoji": "🏺",
+      "meta": "1990",
+      "search": "romance fantasia",
+      "tags": [
+        "romance",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "cuestion-de-tiempo",
+      "label": "Cuestión de Tiempo",
+      "popularity": 3,
+      "emoji": "⌛",
+      "meta": "2013",
+      "search": "romance fantasia",
+      "tags": [
+        "romance",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "antes-del-atardecer",
+      "label": "Antes del Atardecer",
+      "popularity": 2,
+      "emoji": "🌇",
+      "meta": "2004",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "antes-de-la-medianoche",
+      "label": "Antes de la Medianoche",
+      "popularity": 2,
+      "emoji": "🌙",
+      "meta": "2013",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "blue-valentine",
+      "label": "Blue Valentine",
+      "popularity": 2,
+      "emoji": "💔",
+      "meta": "2010",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "historia-de-un-matrimonio",
+      "label": "Historia de un Matrimonio",
+      "popularity": 3,
+      "emoji": "📄",
+      "meta": "2019",
+      "search": "drama romance",
+      "tags": [
+        "drama",
+        "romance"
+      ]
+    },
+    {
+      "id": "kramer-vs-kramer",
+      "label": "Kramer vs. Kramer",
+      "popularity": 2,
+      "emoji": "🍳",
+      "meta": "1979",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "manchester-junto-al-mar",
+      "label": "Manchester Junto al Mar",
+      "popularity": 2,
+      "emoji": "⚓",
+      "meta": "2016",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "nomadland",
+      "label": "Nomadland",
+      "popularity": 2,
+      "emoji": "🚐",
+      "meta": "2020",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "coda-senales-del-corazon",
+      "label": "CODA: Señales del Corazón",
+      "popularity": 3,
+      "emoji": "🤟",
+      "meta": "2021",
+      "search": "drama musical",
+      "tags": [
+        "drama",
+        "musical"
+      ]
+    },
+    {
+      "id": "belfast",
+      "label": "Belfast",
+      "popularity": 2,
+      "emoji": "🧱",
+      "meta": "2021",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "minari",
+      "label": "Minari",
+      "popularity": 2,
+      "emoji": "🌱",
+      "meta": "2020",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "drive-my-car",
+      "label": "Drive My Car",
+      "popularity": 1,
+      "emoji": "🚘",
+      "meta": "2021",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "un-heroe",
+      "label": "Un Héroe",
+      "popularity": 1,
+      "emoji": "🪙",
+      "meta": "2021",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "la-separacion",
+      "label": "La Separación",
+      "popularity": 2,
+      "emoji": "⚖️",
+      "meta": "2011",
+      "search": "drama",
+      "tags": [
+        "drama"
+      ]
+    },
+    {
+      "id": "toni-erdmann",
+      "label": "Toni Erdmann",
+      "popularity": 1,
+      "emoji": "🦷",
+      "meta": "2016",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "la-vida-de-adele",
+      "label": "La Vida de Adèle",
+      "popularity": 2,
+      "emoji": "💙",
+      "meta": "2013",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "amour",
+      "label": "Amour",
+      "popularity": 1,
+      "emoji": "🕊️",
+      "meta": "2012",
+      "search": "drama romance",
+      "tags": [
+        "drama",
+        "romance"
+      ]
+    },
+    {
+      "id": "la-cinta-blanca",
+      "label": "La Cinta Blanca",
+      "popularity": 1,
+      "emoji": "🎀",
+      "meta": "2009",
+      "search": "drama thriller",
+      "tags": [
+        "drama",
+        "thriller"
+      ]
+    },
+    {
+      "id": "los-puentes-de-madison",
+      "label": "Los Puentes de Madison",
+      "popularity": 3,
+      "emoji": "🌉",
+      "meta": "1995",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "casi-famosos",
+      "label": "Casi Famosos",
+      "popularity": 3,
+      "emoji": "🎸",
+      "meta": "2000",
+      "search": "drama musical",
+      "tags": [
+        "drama",
+        "musical"
+      ]
+    },
+    {
+      "id": "pequena-miss-sunshine",
+      "label": "Pequeña Miss Sunshine",
+      "popularity": 3,
+      "emoji": "🚐",
+      "meta": "2006",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "juno",
+      "label": "Juno",
+      "popularity": 3,
+      "emoji": "🍔",
+      "meta": "2007",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "las-ventajas-de-ser-invisible",
+      "label": "Las Ventajas de Ser Invisible",
+      "popularity": 3,
+      "emoji": "📚",
+      "meta": "2012",
+      "search": "drama romance",
+      "tags": [
+        "drama",
+        "romance"
+      ]
+    },
+    {
+      "id": "lady-bird",
+      "label": "Lady Bird",
+      "popularity": 3,
+      "emoji": "🐦",
+      "meta": "2017",
+      "search": "comedia drama",
+      "tags": [
+        "comedia",
+        "drama"
+      ]
+    },
+    {
+      "id": "mujercitas",
+      "label": "Mujercitas",
+      "popularity": 3,
+      "emoji": "✒️",
+      "meta": "2019",
+      "search": "drama romance",
+      "tags": [
+        "drama",
+        "romance"
+      ]
+    },
+    {
+      "id": "orgullo-y-prejuicio",
+      "label": "Orgullo y Prejuicio",
+      "popularity": 4,
+      "emoji": "💐",
+      "meta": "2005",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "sentido-y-sensibilidad",
+      "label": "Sentido y Sensibilidad",
+      "popularity": 2,
+      "emoji": "🫖",
+      "meta": "1995",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "el-paciente-ingles",
+      "label": "El Paciente Inglés",
+      "popularity": 2,
+      "emoji": "🏜️",
+      "meta": "1996",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "memorias-de-africa",
+      "label": "Memorias de África",
+      "popularity": 2,
+      "emoji": "🦁",
+      "meta": "1985",
+      "search": "romance aventura",
+      "tags": [
+        "romance",
+        "aventura"
+      ]
+    },
+    {
+      "id": "doctor-zhivago",
+      "label": "Doctor Zhivago",
+      "popularity": 2,
+      "emoji": "❄️",
+      "meta": "1965",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "lo-que-el-viento-se-llevo",
+      "label": "Lo que el Viento se Llevó",
+      "popularity": 3,
+      "emoji": "🌾",
+      "meta": "1939",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "todo-menos-tu",
+      "label": "Todo Menos Tú",
+      "popularity": 3,
+      "emoji": "🏝️",
+      "meta": "2023",
+      "search": "romance comedia",
+      "tags": [
+        "romance",
+        "comedia"
+      ]
+    },
+    {
+      "id": "culpa-mia",
+      "label": "Culpa Mía",
+      "popularity": 3,
+      "emoji": "🏍️",
+      "meta": "2023",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "a-todos-los-chicos-de-los-que-me-enamore",
+      "label": "A Todos los Chicos de los que me Enamoré",
+      "popularity": 3,
+      "emoji": "💌",
+      "meta": "2018",
+      "search": "romance comedia",
+      "tags": [
+        "romance",
+        "comedia"
+      ]
+    },
+    {
+      "id": "bajo-la-misma-estrella",
+      "label": "Bajo la Misma Estrella",
+      "popularity": 4,
+      "emoji": "🌠",
+      "meta": "2014",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "crepusculo",
+      "label": "Crepúsculo",
+      "popularity": 4,
+      "emoji": "🧛",
+      "meta": "2008",
+      "search": "romance fantasia",
+      "tags": [
+        "romance",
+        "fantasia"
+      ]
+    },
+    {
+      "id": "cincuenta-sombras-de-grey",
+      "label": "Cincuenta Sombras de Grey",
+      "popularity": 3,
+      "emoji": "🪢",
+      "meta": "2015",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "divergente",
+      "label": "Divergente",
+      "popularity": 3,
+      "emoji": "🏙️",
+      "meta": "2014",
+      "search": "ciencia-ficcion accion",
+      "tags": [
+        "ciencia-ficcion",
+        "accion"
+      ]
+    },
+    {
+      "id": "after-aqui-empieza-todo",
+      "label": "After: Aquí Empieza Todo",
+      "popularity": 3,
+      "emoji": "📖",
+      "meta": "2019",
+      "search": "romance drama",
+      "tags": [
+        "romance",
+        "drama"
+      ]
+    },
+    {
+      "id": "senna",
+      "label": "Senna",
+      "popularity": 2,
+      "emoji": "🏎️",
+      "meta": "2010",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "searching-for-sugar-man",
+      "label": "Searching for Sugar Man",
+      "popularity": 1,
+      "emoji": "🎶",
+      "meta": "2012",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "icarus",
+      "label": "Icarus",
+      "popularity": 1,
+      "emoji": "🚴",
+      "meta": "2017",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "blackfish",
+      "label": "Blackfish",
+      "popularity": 1,
+      "emoji": "🐋",
+      "meta": "2013",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "super-size-me",
+      "label": "Super Size Me",
+      "popularity": 2,
+      "emoji": "🍔",
+      "meta": "2004",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "bowling-for-columbine",
+      "label": "Bowling for Columbine",
+      "popularity": 2,
+      "emoji": "🎳",
+      "meta": "2002",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "amy",
+      "label": "Amy",
+      "popularity": 2,
+      "emoji": "🎤",
+      "meta": "2015",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "el-dilema-de-las-redes-sociales",
+      "label": "El Dilema de las Redes Sociales",
+      "popularity": 3,
+      "emoji": "📱",
+      "meta": "2020",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "mi-maestro-el-pulpo",
+      "label": "Mi Maestro el Pulpo",
+      "popularity": 3,
+      "emoji": "🐙",
+      "meta": "2020",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
+    },
+    {
+      "id": "won-t-you-be-my-neighbor",
+      "label": "Won't You Be My Neighbor?",
+      "popularity": 1,
+      "emoji": "🧶",
+      "meta": "2018",
+      "search": "documental",
+      "tags": [
+        "documental"
+      ]
     }
   ],
   "people": [
@@ -2812,7 +7529,7 @@ export const CONTENT: {
     },
     "micro": {
       "onboardingIntro": "Unas preguntas sobre cine y una sobre pochoclos, que es la que más pesa. Contestá lo que de verdad mirás, no lo que queda bien.",
-      "onboardingDone": "Perfil armado. Ese código de arriba es tuyo: decíselo a quien te dé curiosidad.",
+      "onboardingDone": "Perfil armado. En la pantalla que sigue están tu código y tu QR: mostráselos a quien te dé curiosidad.",
       "emptyFeed": "Todavía no te comparaste con nadie. Mirá para los costados: la sala está llena de gente en la misma.",
       "compareCta": "Ver cuánto coincidimos",
       "codeExplainer": "Estos seis caracteres son tu credencial. Se los decís a alguien en la fila del candy, los tipea, y al toque ven cuánto coinciden. No lleva tu teléfono ni tus redes: si querés dar algo más, lo das vos.",
