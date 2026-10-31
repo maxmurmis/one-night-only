@@ -24,7 +24,7 @@ export function MatchCard({
   const [busy, setBusy] = useState(false);
 
   const color =
-    result.score >= 85 ? "var(--color-gold)" : result.score >= 60 ? "var(--color-neon)" : "var(--color-violet)";
+    result.score >= 85 ? "var(--color-gold)" : result.score >= 60 ? "var(--color-neon)" : "var(--color-silver)";
 
   async function toggle() {
     setBusy(true);
@@ -110,7 +110,7 @@ export function MatchCard({
           disabled={busy}
           className="btn py-2 text-sm"
           style={{
-            background: liked ? "rgba(255,45,99,0.18)" : "rgba(255,255,255,0.05)",
+            background: liked ? "rgba(221,0,0,0.18)" : "rgba(255,255,255,0.05)",
             borderColor: liked ? "var(--color-neon)" : "var(--color-line)",
             color: liked ? "var(--color-neon)" : "var(--color-cream)",
           }}

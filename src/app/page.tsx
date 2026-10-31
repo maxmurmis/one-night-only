@@ -37,7 +37,7 @@ export default async function Landing({
     redirect(
       isComplete((user.answers ?? {}) as Answers)
         ? next === "/onboarding"
-          ? "/matches"
+          ? "/perfil"
           : next
         : `/onboarding?next=${encodeURIComponent(next)}`,
     );
@@ -49,7 +49,7 @@ export default async function Landing({
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col px-5 pb-14">
       <header className="flex items-center justify-between py-5">
-        <span className="chip border-[rgba(255,45,99,0.4)] text-[var(--color-neon-soft)]">
+        <span className="chip border-[rgba(221,0,0,0.4)] text-[var(--color-neon-soft)]">
           Cinemark × One Night Only
         </span>
         <Link href="/beneficios" className="text-xs font-semibold uppercase tracking-wider text-[var(--color-dim)]">
@@ -85,7 +85,7 @@ export default async function Landing({
 
       <section className="mt-8 flex flex-col gap-3">
         {error ? (
-          <div className="card border-[rgba(255,45,99,0.5)] bg-[rgba(255,45,99,0.08)] p-3 text-sm text-[var(--color-neon-soft)]">
+          <div className="card border-[rgba(221,0,0,0.5)] bg-[rgba(221,0,0,0.08)] p-3 text-sm text-[var(--color-neon-soft)]">
             No pudimos entrar: <span className="font-mono text-xs">{error}</span>
           </div>
         ) : null}

@@ -159,7 +159,7 @@ export function Reveal({
             )}
           </button>
           {error ? (
-            <p className="mt-2 text-center text-sm text-[var(--color-neon)]">{error}</p>
+            <p className="mt-2 text-center text-sm text-[var(--color-neon-soft)]">{error}</p>
           ) : null}
         </div>
       )}
@@ -193,7 +193,7 @@ export function Reveal({
       {/* Choques */}
       {result.clashes.length > 0 ? (
         <section className="w-full">
-          <h3 className="mb-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-neon)]">
+          <h3 className="mb-2.5 text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-neon-soft)]">
             Dónde se van a pelear
           </h3>
           <div className="flex flex-col gap-2">

@@ -24,7 +24,7 @@ mejor el beneficio que desbloquean *juntos*.
 | `/comparar` | El corazón de la activación: metés un código de 6 caracteres y ves el %. |
 | `/m/[code]` | La revelación — el número sube animado, el escalón, el premio, en qué coinciden y dónde se van a pelear. Es también el destino del QR. |
 | `/beneficios` | Los escalones y qué desbloquea cada uno. |
-| `/perfil` | Tu código, tu QR, tus respuestas, y el switch para salir del ranking. |
+| `/perfil` | Tu código, tu QR, tus respuestas, y el switch para salir del ranking. Es donde abre la app cuando ya tenés perfil. |
 | `/api/health` | Semáforo de configuración. Lo primero que hay que mirar tras deployar. |
 
 ## Cómo se calcula la compatibilidad

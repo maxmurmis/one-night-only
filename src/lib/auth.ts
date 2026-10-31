@@ -131,7 +131,7 @@ export function redirectUri(req?: Request): string {
  * empiece con "/". Es el camino del QR: alguien escanea /m/ABC123 sin cuenta,
  * se loguea, y tiene que volver a la comparación — no a un sitio ajeno.
  */
-export function safeNext(value: string | null | undefined, fallback = "/matches"): string {
+export function safeNext(value: string | null | undefined, fallback = "/perfil"): string {
   if (!value) return fallback;
   if (!value.startsWith("/")) return fallback;
   if (value.startsWith("//") || value.startsWith("/\\")) return fallback;

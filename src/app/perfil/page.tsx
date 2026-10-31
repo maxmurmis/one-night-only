@@ -81,7 +81,7 @@ export default async function PerfilPage() {
           <h2 className="text-xs font-bold uppercase tracking-[0.2em] text-[var(--color-dim)]">
             Tus respuestas
           </h2>
-          <Link href="/onboarding" className="text-xs font-semibold text-[var(--color-neon)]">
+          <Link href="/onboarding" className="text-xs font-semibold text-[var(--color-neon-soft)]">
             Editar
           </Link>
         </div>

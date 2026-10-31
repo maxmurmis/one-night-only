@@ -35,11 +35,11 @@ export async function GET(req: Request) {
     // A dónde queríamos ir antes del login (típicamente /m/CODIGO, escaneado de
     // un QR). Si todavía no completó el perfil, el destino viaja como query del
     // onboarding para no perderlo: es el recorrido central de la activación.
-    const wanted = safeNext(st.next, "/matches");
+    const wanted = safeNext(st.next, "/perfil");
     const done = isComplete((user.answers ?? {}) as Answers);
     const next = done
       ? wanted === "/onboarding"
-        ? "/matches"
+        ? "/perfil"
         : wanted
       : `/onboarding?next=${encodeURIComponent(wanted)}`;
 

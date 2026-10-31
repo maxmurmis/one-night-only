@@ -9,7 +9,7 @@ const ITEMS = [
 
 export function NavBar({ active }: { active: string }) {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-lg border-t border-[var(--color-line)] bg-[rgba(8,5,10,0.9)] px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl">
+    <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-lg border-t border-[var(--color-line)] bg-[rgba(18,16,13,0.9)] px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl">
       <ul className="flex items-stretch justify-around">
         {ITEMS.map((it) => {
           const on = it.key === active;
@@ -18,7 +18,7 @@ export function NavBar({ active }: { active: string }) {
               <Link
                 href={it.href}
                 className="flex flex-col items-center gap-0.5 py-2.5 text-[0.68rem] font-semibold tracking-wide uppercase transition-colors"
-                style={{ color: on ? "var(--color-neon)" : "var(--color-dim)" }}
+                style={{ color: on ? "var(--color-neon-soft)" : "var(--color-dim)" }}
               >
                 <span className="text-lg leading-none" style={{ opacity: on ? 1 : 0.55 }}>
                   {it.icon}

@@ -14,15 +14,15 @@ export function Shell({
 }) {
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col">
-      <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-[var(--color-line)] bg-[rgba(8,5,10,0.82)] px-4 py-3 backdrop-blur-xl">
-        <Link href="/matches" className="flex items-center gap-2">
+      <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-[var(--color-line)] bg-[rgba(18,16,13,0.82)] px-4 py-3 backdrop-blur-xl">
+        <Link href="/perfil" className="flex items-center gap-2">
           <span className="display text-2xl leading-none text-[var(--color-neon)] glow-neon">
             MOVIE
           </span>
           <span className="display text-2xl leading-none text-[var(--color-cream)]">MATCH</span>
         </Link>
         {right ?? (
-          <span className="chip border-[rgba(255,45,99,0.4)] text-[var(--color-neon-soft)]">
+          <span className="chip border-[rgba(221,0,0,0.4)] text-[var(--color-neon-soft)]">
             27 AGO
           </span>
         )}

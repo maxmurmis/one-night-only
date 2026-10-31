@@ -1,4 +1,4 @@
-const PALETTE = ["#ff2d63", "#a855f7", "#ffc857", "#4ade9b", "#ff6b93", "#5b8dff"];
+const PALETTE = ["#dd0000", "#f7f6f5", "#ffc857", "#c9c5c2", "#ff4d4d", "#787272"];
 
 function hue(name: string): string {
   let h = 0;

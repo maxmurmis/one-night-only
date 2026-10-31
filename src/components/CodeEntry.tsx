@@ -44,7 +44,7 @@ export function CodeEntry() {
             className="display flex h-14 flex-1 items-center justify-center rounded-xl border text-2xl"
             style={{
               borderColor: clean.length === i ? "var(--color-neon)" : "var(--color-line)",
-              background: clean[i] ? "rgba(255,45,99,0.1)" : "rgba(255,255,255,0.03)",
+              background: clean[i] ? "rgba(221,0,0,0.1)" : "rgba(255,255,255,0.03)",
               color: clean[i] ? "var(--color-cream)" : "var(--color-dim)",
             }}
           >
@@ -71,7 +71,7 @@ export function CodeEntry() {
         aria-label="Código de 6 caracteres"
       />
 
-      {error ? <p className="text-sm text-[var(--color-neon)]">{error}</p> : null}
+      {error ? <p className="text-sm text-[var(--color-neon-soft)]">{error}</p> : null}
 
       <button
         className="btn btn-primary w-full"

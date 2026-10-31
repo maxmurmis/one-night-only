@@ -44,7 +44,7 @@ export async function POST(req: Request) {
   }
 
   const name = ((form?.get("name") as string | null) ?? "").trim() || email.split("@")[0];
-  const wanted = safeNext(form?.get("next") as string | null, "/matches");
+  const wanted = safeNext(form?.get("next") as string | null, "/perfil");
   const user = await upsertUser({ sub: null, email, name });
   await setSession(toSession(user));
   return NextResponse.redirect(

@@ -237,7 +237,7 @@ export function Quiz({
           />
         </label>
 
-        {error ? <p className="text-sm text-[var(--color-neon)]">{error}</p> : null}
+        {error ? <p className="text-sm text-[var(--color-neon-soft)]">{error}</p> : null}
 
         <p className="text-sm text-[var(--color-muted)]">{done}</p>
 
@@ -402,7 +402,7 @@ function ScaleInput({
             style={{
               borderColor: value === n ? "var(--color-neon)" : "var(--color-line)",
               background:
-                value === n ? "rgba(255,45,99,0.16)" : "rgba(255,255,255,0.03)",
+                value === n ? "rgba(221,0,0,0.16)" : "rgba(255,255,255,0.03)",
               color: value === n ? "var(--color-neon)" : "var(--color-muted)",
             }}
           >

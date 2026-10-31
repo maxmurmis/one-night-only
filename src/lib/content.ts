@@ -7501,8 +7501,8 @@ export const CONTENT: {
   ],
   "copy": {
     "landing": {
-      "hero": "Una noche. Una función. Un match.",
-      "sub": "Cinemark arma una función solo para solteros de One Night Only. Contestás un cuestionario de cine, te comparás con quien quieras de la sala y lo que coinciden lo desbloquean juntos.",
+      "hero": "Tu próximo match empieza con una película.",
+      "sub": "Cinemark presenta Movie Match: una app para conectar personas a través de sus gustos cinéfilos. Contestás un cuestionario sobre cine, comparás tus respuestas con las de otros usuarios y descubrís qué tan compatibles son. Cuantas más coincidencias, más beneficios desbloquean juntos.",
       "cta": "Entrá con Google",
       "steps": [
         {

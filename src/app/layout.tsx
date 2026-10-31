@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#08050a",
+  themeColor: "#12100d",
   width: "device-width",
   initialScale: 1,
   // Sin maximumScale: bloquear el pinch-zoom deja afuera a quien lo necesita

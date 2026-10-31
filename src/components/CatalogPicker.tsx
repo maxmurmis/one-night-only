@@ -82,7 +82,7 @@ export function CatalogPicker({
               <button
                 key={id}
                 onClick={() => toggle(id)}
-                className="chip border-[var(--color-neon)] bg-[rgba(255,45,99,0.16)] text-[var(--color-cream)] normal-case"
+                className="chip border-[var(--color-neon)] bg-[rgba(221,0,0,0.16)] text-[var(--color-cream)] normal-case"
               >
                 {it?.emoji ? <span>{it.emoji}</span> : null}
                 <span className="text-[0.78rem]">{it?.label ?? id}</span>
@@ -116,7 +116,7 @@ export function CatalogPicker({
                     onClick={() => toggle(it.id)}
                     disabled={!on && full}
                     className="flex w-full items-center gap-3 border-b border-[var(--color-line)] px-3.5 py-2.5 text-left transition-colors last:border-b-0 disabled:opacity-35"
-                    style={{ background: on ? "rgba(255,45,99,0.12)" : "transparent" }}
+                    style={{ background: on ? "rgba(221,0,0,0.12)" : "transparent" }}
                   >
                     <span className="w-6 text-center text-base">{it.emoji ?? "🎞️"}</span>
                     <span className="flex-1 text-[0.92rem] leading-tight text-[var(--color-cream)]">

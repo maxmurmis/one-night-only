@@ -2,20 +2,23 @@
 
 /* ------------------------------------------------------------------ tokens */
 
+/* Paleta de Cinemark: el rojo #dd0000 y los negros cálidos de cinemark.com.ar.
+   El rojo pleno es para rellenos y títulos grandes; el texto chico va en
+   `neon-soft`, que sobre `ink` pasa el contraste AA. */
 @theme {
-  --color-ink: #08050a;
-  --color-ink-2: #100a13;
-  --color-ink-3: #191021;
-  --color-line: #2a1d33;
+  --color-ink: #12100d;
+  --color-ink-2: #1a1815;
+  --color-ink-3: #23211e;
+  --color-line: #363333;
 
-  --color-cream: #f7f0f4;
-  --color-muted: #a394ad;
-  --color-dim: #6d5f78;
+  --color-cream: #f7f6f5;
+  --color-muted: #aaa9a8;
+  --color-dim: #787272;
 
-  --color-neon: #ff2d63;
-  --color-neon-soft: #ff6b93;
+  --color-neon: #dd0000;
+  --color-neon-soft: #ff4d4d;
   --color-gold: #ffc857;
-  --color-violet: #a855f7;
+  --color-silver: #c9c5c2;
   --color-mint: #4ade9b;
 
   --font-display: var(--font-bebas), "Impact", sans-serif;
@@ -50,8 +53,8 @@ body::before {
   pointer-events: none;
   z-index: 0;
   background:
-    radial-gradient(120% 70% at 50% -10%, rgba(255, 45, 99, 0.18), transparent 60%),
-    radial-gradient(90% 60% at 85% 10%, rgba(168, 85, 247, 0.14), transparent 55%),
+    radial-gradient(120% 70% at 50% -10%, rgba(221, 0, 0, 0.16), transparent 60%),
+    radial-gradient(90% 60% at 85% 10%, rgba(107, 13, 13, 0.32), transparent 55%),
     radial-gradient(70% 50% at 10% 90%, rgba(255, 200, 87, 0.07), transparent 60%);
 }
 
@@ -119,9 +122,9 @@ body::after {
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--color-neon), #ff4d8d);
+    background: linear-gradient(135deg, var(--color-neon), #a30000);
     color: #fff;
-    box-shadow: 0 8px 30px -8px rgba(255, 45, 99, 0.7);
+    box-shadow: 0 8px 30px -8px rgba(221, 0, 0, 0.7);
   }
   .btn-primary:hover:not(:disabled) {
     filter: brightness(1.08);
@@ -197,16 +200,16 @@ body::after {
       transform 0.1s ease;
   }
   .opt:hover {
-    border-color: rgba(255, 45, 99, 0.5);
-    background: rgba(255, 45, 99, 0.06);
+    border-color: rgba(221, 0, 0, 0.5);
+    background: rgba(221, 0, 0, 0.06);
   }
   .opt:active {
     transform: scale(0.985);
   }
   .opt[data-on="1"] {
     border-color: var(--color-neon);
-    background: rgba(255, 45, 99, 0.14);
-    box-shadow: inset 0 0 0 1px rgba(255, 45, 99, 0.45);
+    background: rgba(221, 0, 0, 0.14);
+    box-shadow: inset 0 0 0 1px rgba(221, 0, 0, 0.45);
   }
 
   /* Sello tipo tatuaje temporal de la peli */
@@ -225,8 +228,8 @@ body::after {
 
   .glow-neon {
     text-shadow:
-      0 0 24px rgba(255, 45, 99, 0.55),
-      0 0 60px rgba(255, 45, 99, 0.28);
+      0 0 24px rgba(221, 0, 0, 0.55),
+      0 0 60px rgba(221, 0, 0, 0.28);
   }
   .glow-gold {
     text-shadow:

@@ -14,9 +14,9 @@ export function ScoreRing({
   const c = 2 * Math.PI * r;
   const pct = Math.max(0, Math.min(100, score)) / 100;
 
-  // El color acompaña al escalón: dorado arriba de 85, neón en el medio,
-  // violeta abajo — así el número se lee antes de leerlo.
-  const color = score >= 85 ? "#ffc857" : score >= 60 ? "#ff2d63" : "#a855f7";
+  // El color acompaña al escalón: dorado arriba de 85, rojo Cinemark en el
+  // medio, plata abajo — así el número se lee antes de leerlo.
+  const color = score >= 85 ? "#ffc857" : score >= 60 ? "#dd0000" : "#c9c5c2";
 
   return (
     <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
@@ -24,7 +24,7 @@ export function ScoreRing({
         <defs>
           <linearGradient id={`g-${score}`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor={color} />
-            <stop offset="100%" stopColor={score >= 85 ? "#ff9d2e" : "#ff6b93"} />
+            <stop offset="100%" stopColor={score >= 85 ? "#ff9d2e" : score >= 60 ? "#ff4d4d" : "#787272"} />
           </linearGradient>
         </defs>
         <circle
