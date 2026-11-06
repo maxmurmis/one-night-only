@@ -40,6 +40,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es-AR" className={`${bebas.variable} ${inter.variable}`}>
       <body>
         <div id="app">{children}</div>
+        <div className="roaming-cat" aria-hidden="true">
+          <img src="/gato-naranja.png" alt="" />
+        </div>
       </body>
     </html>
   );

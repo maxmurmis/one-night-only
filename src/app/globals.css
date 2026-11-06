@@ -288,3 +288,45 @@ body {
 .no-bar {
   scrollbar-width: none;
 }
+
+/* El gato recorre la ventana sin interferir con la navegación. */
+.roaming-cat {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  width: clamp(72px, 14vw, 112px);
+  pointer-events: none;
+  animation: cat-roam 32s linear infinite;
+  will-change: transform;
+}
+
+.roaming-cat img {
+  display: block;
+  width: 100%;
+  height: auto;
+  animation: cat-bounce 0.45s ease-in-out infinite alternate;
+}
+
+@keyframes cat-roam {
+  0% { transform: translate(0, 8vh); }
+  20% { transform: translate(calc(100vw - 100%), 20vh); }
+  21% { transform: translate(calc(100vw - 100%), 20vh) scaleX(-1); }
+  45% { transform: translate(0, 45vh) scaleX(-1); }
+  46% { transform: translate(0, 45vh); }
+  70% { transform: translate(calc(100vw - 100%), 70vh); }
+  71% { transform: translate(calc(100vw - 100%), 70vh) scaleX(-1); }
+  95% { transform: translate(0, 88vh) scaleX(-1); }
+  100% { transform: translate(0, 8vh); }
+}
+
+@keyframes cat-bounce {
+  from { transform: translateY(0) rotate(-3deg); }
+  to { transform: translateY(-8px) rotate(3deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .roaming-cat {
+    display: none;
+  }
+}
