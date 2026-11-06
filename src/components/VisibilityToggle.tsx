@@ -34,7 +34,7 @@ export function VisibilityToggle({ initial }: { initial: boolean }) {
         disabled={busy}
         aria-pressed={on}
         className="relative h-7 w-12 shrink-0 rounded-full transition-colors"
-        style={{ background: on ? "var(--color-neon)" : "rgba(255,255,255,0.14)" }}
+        style={{ background: on ? "var(--color-neon)" : "rgba(0,0,0,0.18)" }}
       >
         <span
           className="absolute top-1 h-5 w-5 rounded-full bg-white transition-all"

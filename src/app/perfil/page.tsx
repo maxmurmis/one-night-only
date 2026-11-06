@@ -47,7 +47,7 @@ export default async function PerfilPage() {
           <p className="font-semibold text-[var(--color-gold)]">
             Te faltan {total - answered} preguntas
           </p>
-          <div className="h-1.5 w-full overflow-hidden rounded-full bg-[rgba(255,255,255,0.08)]">
+          <div className="h-1.5 w-full overflow-hidden rounded-full bg-[rgba(0,0,0,0.08)]">
             <div
               className="h-full rounded-full"
               style={{

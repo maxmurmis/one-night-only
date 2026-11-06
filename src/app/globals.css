@@ -2,24 +2,20 @@
 
 /* ------------------------------------------------------------------ tokens */
 
-/* Paleta de Cinemark: el rojo #dd0000 y los negros cálidos de cinemark.com.ar.
-   El rojo pleno es para rellenos y títulos grandes; el texto chico va en
-   `neon-soft`, que sobre `ink` pasa el contraste AA. */
+/* Paleta de Cinemark Argentina sobre superficies claras. */
 @theme {
-  --color-ink: #12100d;
-  --color-ink-2: #1a1815;
-  --color-ink-3: #23211e;
-  --color-line: #363333;
-
-  --color-cream: #f7f6f5;
-  --color-muted: #aaa9a8;
-  --color-dim: #787272;
-
-  --color-neon: #dd0000;
-  --color-neon-soft: #ff4d4d;
-  --color-gold: #ffc857;
-  --color-silver: #c9c5c2;
-  --color-mint: #4ade9b;
+  --color-ink: #f5f5f5;
+  --color-ink-2: #ffffff;
+  --color-ink-3: #eeeeee;
+  --color-line: #dddddd;
+  --color-cream: #242424;
+  --color-muted: #555555;
+  --color-dim: #686868;
+  --color-neon: #e20613;
+  --color-neon-soft: #a12025;
+  --color-gold: #a12025;
+  --color-silver: #686868;
+  --color-mint: #247049;
 
   --font-display: var(--font-bebas), "Impact", sans-serif;
   --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -32,7 +28,7 @@
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
   background: var(--color-ink);
 }
 
@@ -43,31 +39,6 @@ body {
   min-height: 100dvh;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-}
-
-/* Luz de proyector: un halo que cae desde arriba, como en una sala. */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background:
-    radial-gradient(120% 70% at 50% -10%, rgba(221, 0, 0, 0.16), transparent 60%),
-    radial-gradient(90% 60% at 85% 10%, rgba(107, 13, 13, 0.32), transparent 55%),
-    radial-gradient(70% 50% at 10% 90%, rgba(255, 200, 87, 0.07), transparent 60%);
-}
-
-/* Grano de película. */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.055;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 #app {
@@ -91,10 +62,10 @@ body::after {
   }
 
   .card {
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015));
+    background: #fff;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04);
     border: 1px solid var(--color-line);
     border-radius: 1.25rem;
-    backdrop-filter: blur(14px);
   }
 
   .btn {
@@ -122,27 +93,26 @@ body::after {
   }
 
   .btn-primary {
-    background: linear-gradient(135deg, var(--color-neon), #a30000);
+    background: var(--color-neon);
     color: #fff;
-    box-shadow: 0 8px 30px -8px rgba(221, 0, 0, 0.7);
+    box-shadow: none;
   }
   .btn-primary:hover:not(:disabled) {
     filter: brightness(1.08);
   }
 
   .btn-ghost {
-    background: rgba(255, 255, 255, 0.05);
+    background: #fff;
     border-color: var(--color-line);
     color: var(--color-cream);
   }
   .btn-ghost:hover:not(:disabled) {
-    background: rgba(255, 255, 255, 0.1);
+    background: #f2f2f2;
   }
 
   .btn-gold {
-    background: linear-gradient(135deg, var(--color-gold), #ffb01f);
-    color: #241704;
-    box-shadow: 0 8px 30px -10px rgba(255, 200, 87, 0.6);
+    background: var(--color-gold);
+    color: #fff;
   }
 
   .chip {
@@ -156,13 +126,13 @@ body::after {
     letter-spacing: 0.04em;
     text-transform: uppercase;
     border: 1px solid var(--color-line);
-    background: rgba(255, 255, 255, 0.04);
+    background: #fff;
     color: var(--color-muted);
   }
 
   .input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.04);
+    background: #fff;
     border: 1px solid var(--color-line);
     border-radius: 0.85rem;
     padding: 0.8rem 1rem;
@@ -189,7 +159,7 @@ body::after {
     padding: 0.9rem 1rem;
     border-radius: 1rem;
     border: 1px solid var(--color-line);
-    background: rgba(255, 255, 255, 0.03);
+    background: #fff;
     color: var(--color-cream);
     font-size: 0.98rem;
     line-height: 1.3;
@@ -224,17 +194,6 @@ body::after {
     text-transform: uppercase;
     transform: rotate(-3.5deg);
     opacity: 0.92;
-  }
-
-  .glow-neon {
-    text-shadow:
-      0 0 24px rgba(221, 0, 0, 0.55),
-      0 0 60px rgba(221, 0, 0, 0.28);
-  }
-  .glow-gold {
-    text-shadow:
-      0 0 24px rgba(255, 200, 87, 0.5),
-      0 0 60px rgba(255, 200, 87, 0.22);
   }
 
   .divider {
@@ -301,7 +260,7 @@ body::after {
   }
 }
 .flicker {
-  animation: mm-flicker 6.5s infinite;
+  animation: none;
 }
 
 @keyframes mm-spin {

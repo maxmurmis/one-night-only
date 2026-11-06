@@ -16,7 +16,7 @@ export function ScoreRing({
 
   // El color acompaña al escalón: dorado arriba de 85, rojo Cinemark en el
   // medio, plata abajo — así el número se lee antes de leerlo.
-  const color = score >= 85 ? "#ffc857" : score >= 60 ? "#dd0000" : "#c9c5c2";
+  const color = score >= 85 ? "#a12025" : score >= 60 ? "#e20613" : "#686868";
 
   return (
     <div className="relative inline-flex items-center justify-center" style={{ width: size, height: size }}>
@@ -24,7 +24,7 @@ export function ScoreRing({
         <defs>
           <linearGradient id={`g-${score}`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor={color} />
-            <stop offset="100%" stopColor={score >= 85 ? "#ff9d2e" : score >= 60 ? "#ff4d4d" : "#787272"} />
+            <stop offset="100%" stopColor={score >= 85 ? "#e20613" : score >= 60 ? "#a12025" : "#787272"} />
           </linearGradient>
         </defs>
         <circle
@@ -32,7 +32,7 @@ export function ScoreRing({
           cy={size / 2}
           r={r}
           fill="none"
-          stroke="rgba(255,255,255,0.07)"
+          stroke="rgba(0,0,0,0.08)"
           strokeWidth={stroke}
         />
         <circle
@@ -45,7 +45,6 @@ export function ScoreRing({
           strokeLinecap="round"
           strokeDasharray={`${c * pct} ${c}`}
           transform={`rotate(-90 ${size / 2} ${size / 2})`}
-          style={{ filter: `drop-shadow(0 0 ${size * 0.06}px ${color}aa)` }}
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">

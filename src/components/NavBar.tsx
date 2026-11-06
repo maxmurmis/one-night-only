@@ -9,7 +9,7 @@ const ITEMS = [
 
 export function NavBar({ active }: { active: string }) {
   return (
-    <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-lg border-t border-[var(--color-line)] bg-[rgba(18,16,13,0.9)] px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl">
+    <nav className="fixed inset-x-0 bottom-0 z-40 mx-auto w-full max-w-lg border-t border-[var(--color-line)] bg-[rgba(255,255,255,0.97)] px-2 pb-[env(safe-area-inset-bottom)] backdrop-blur-xl">
       <ul className="flex items-stretch justify-around">
         {ITEMS.map((it) => {
           const on = it.key === active;

@@ -4,17 +4,11 @@ import { currentUser, devLoginEnabled, googleConfigured, safeNext } from "@/lib/
 import { isComplete } from "@/lib/scoring";
 import { COPY } from "@/lib/tiers";
 import { QUESTIONS } from "@/lib/questions";
-import { PREMIERE } from "@/lib/constants";
 import { GoogleButton } from "@/components/GoogleButton";
 import type { Answers } from "@/lib/types";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
-
-function daysToPremiere(): number {
-  const ms = new Date(PREMIERE).getTime() - Date.now();
-  return Math.max(0, Math.ceil(ms / 86_400_000));
-}
 
 export default async function Landing({
   searchParams,
@@ -43,14 +37,13 @@ export default async function Landing({
     );
   }
 
-  const days = daysToPremiere();
   const ready = googleConfigured();
 
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col px-5 pb-14">
       <header className="flex items-center justify-between py-5">
         <span className="chip border-[rgba(221,0,0,0.4)] text-[var(--color-neon-soft)]">
-          Cinemark × One Night Only
+          Cinemark
         </span>
         <Link href="/beneficios" className="text-xs font-semibold uppercase tracking-wider text-[var(--color-dim)]">
           Premios
@@ -75,9 +68,6 @@ export default async function Landing({
         </p>
 
         <div className="flex flex-wrap items-center gap-2">
-          <span className="chip border-[rgba(255,200,87,0.35)] text-[var(--color-gold)]">
-            {days === 0 ? "🎬 es esta noche" : days === 1 ? "⏳ falta 1 día" : `⏳ faltan ${days} días`}
-          </span>
           <span className="chip">🎬 {QUESTIONS.length} preguntas</span>
           <span className="chip">⚡ 2 minutos</span>
         </div>
@@ -155,8 +145,7 @@ export default async function Landing({
       </section>
 
       <footer className="mt-12 text-center text-xs leading-relaxed text-[var(--color-dim)]">
-        <p>Una activación de Cinemark para el estreno de One Night Only.</p>
-        <p className="mt-1">27 de agosto · función exclusiva para solteros.</p>
+        <p>Movie Match · Cinemark</p>
       </footer>
     </div>
   );

@@ -14,7 +14,7 @@ export function Shell({
 }) {
   return (
     <div className="mx-auto flex min-h-dvh w-full max-w-lg flex-col">
-      <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-[var(--color-line)] bg-[rgba(18,16,13,0.82)] px-4 py-3 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 flex items-center justify-between gap-3 border-b border-[var(--color-line)] bg-[rgba(255,255,255,0.96)] px-4 py-3 backdrop-blur-xl">
         <Link href="/perfil" className="flex items-center gap-2">
           <span className="display text-2xl leading-none text-[var(--color-neon)] glow-neon">
             MOVIE
@@ -23,7 +23,7 @@ export function Shell({
         </Link>
         {right ?? (
           <span className="chip border-[rgba(221,0,0,0.4)] text-[var(--color-neon-soft)]">
-            27 AGO
+            CINEMARK
           </span>
         )}
       </header>

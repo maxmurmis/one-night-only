@@ -16,19 +16,19 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Movie Match · Cinemark × One Night Only",
+  title: "Movie Match · Cinemark",
   description:
-    "Una noche al año. Una sala llena de solteros. Descubrí con quién sos compatible en términos cinematográficos y desbloqueen beneficios juntos.",
+    "Descubrí con quién compartís tus gustos de cine.",
   openGraph: {
-    title: "Movie Match · Cinemark × One Night Only",
+    title: "Movie Match · Cinemark",
     description:
-      "Contestá 14 preguntas de cine y descubrí tu compatibilidad con cualquiera. 27 de agosto, función exclusiva para solteros.",
+      "Contestá preguntas de cine y descubrí tu compatibilidad.",
     type: "website",
   },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#12100d",
+  themeColor: "#f5f5f5",
   width: "device-width",
   initialScale: 1,
   // Sin maximumScale: bloquear el pinch-zoom deja afuera a quien lo necesita
